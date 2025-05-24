@@ -1,0 +1,12 @@
+<div class="mapa">
+  <div
+    class="fase"
+    *ngFor="let f of fases; let i = index"
+    [ngStyle]="{ left: f.x + '%', top: f.y + '%' }"
+    [class.ativa]="i === faseAtual"
+  >
+    {{ i + 1 }}
+  </div>
+
+  <div class="jogadora" [ngStyle]="playerStyle"></div>
+</div>
