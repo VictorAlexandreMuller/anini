@@ -1,33 +1,73 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  AfterViewInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-mapa',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './mapa.component.html',
-  styleUrls: ['./mapa.component.scss']
+  styleUrls: ['./mapa.component.scss'],
 })
-export class MapaComponent {
+export class MapaComponent implements AfterViewInit {
   faseAtual = 0;
 
-  fases = [
-    { x: 5, y: 20 }, { x: 20, y: 20 }, { x: 40, y: 20 }, { x: 60, y: 20 },
-    { x: 60, y: 40 }, { x: 40, y: 40 }, { x: 20, y: 40 }, { x: 20, y: 60 },
-    { x: 40, y: 60 }, { x: 80, y: 60 }
-  ];
+  @ViewChildren(
+    'fase0, fase1, fase2, fase3, fase4, fase5, fase6, fase7, fase8, fase9, fase10'
+  )
+  fasesRef!: QueryList<ElementRef>;
 
-  get playerStyle() {
-    const pos = this.fases[this.faseAtual];
-    return {
-      left: `calc(${pos.x}% - 16px)`,
-      top: `calc(${pos.y}% - 32px)`
-    };
+  top = '0px';
+  left = '0px';
+
+  ngAfterViewInit() {
+    this.fasesRef.changes.subscribe(() => this.atualizarPosicao());
+    setTimeout(() => this.atualizarPosicao(), 0);
+  }
+
+  mostrarFase(i: number): boolean {
+    if (i <= 4) return true;
+    if (i <= 9 && this.faseAtual >= 4) return true;
+    if (i === 10 && this.faseAtual >= 9) return true;
+    return false;
   }
 
   avançarFase() {
-    if (this.faseAtual < this.fases.length - 1) {
+    if (this.faseAtual < 10) {
       this.faseAtual++;
+      this.atualizarPosicao();
     }
+  }
+
+  voltarFase() {
+    if (this.faseAtual > 0) {
+      this.faseAtual--;
+      this.atualizarPosicao();
+    }
+  }
+
+  atualizarPosicao() {
+    const fase = this.fasesRef.get(this.faseAtual);
+    if (!fase) return;
+
+    const el = fase.nativeElement as HTMLElement;
+    const mapa = el.closest('.mapa') as HTMLElement | null;
+
+    if (!mapa) return;
+
+    this.top = `${el.offsetTop - 24}px`;
+    this.left = `${el.offsetLeft + el.offsetWidth / 2 - 21}px`;
+  }
+
+  get playerStyle() {
+    return {
+      top: this.top,
+      left: this.left,
+    };
   }
 }

@@ -1,52 +1,63 @@
 .mapa {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
   width: 100%;
-  max-width: 512px;
-  aspect-ratio: 4 / 3;
-  margin: 20px auto;
+  max-width: 500px;
+  margin: 0 auto;
   background-image: url('../../assets/mapa.png');
-  background-size: 100px 100px;
   background-repeat: repeat;
-  background-position: top left;
-  border: 4px solid #444;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
-  overflow: hidden;
+  background-size: auto;
+  border: 6px ridge #3e2f1c;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linha.central {
+  justify-content: center;
 }
 
 .fase {
-  position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
   background: radial-gradient(circle, gold, orange);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #000;
   border: 2px solid #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   z-index: 1;
 }
 
 .fase.ativa {
   background: limegreen;
-  transform: scale(1.2);
-  transition: transform 0.3s, background 0.3s;
+  color: white;
+  transform: scale(1.15);
 }
 
 .jogadora {
-  position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   background-image: url('../../assets/playerStyle2.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all 0.4s ease;
-  z-index: 2;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+  transition: top 0.4s ease, left 0.4s ease;
 }
 
 .btn-avancar {
@@ -65,4 +76,11 @@
 
 .btn-avancar:hover {
   transform: scale(1.05);
+}
+
+.fase.completa {
+  background: #2e8b57; // verde escuro
+  color: white;
+  font-weight: bold;
+  opacity: 0.9;
 }
