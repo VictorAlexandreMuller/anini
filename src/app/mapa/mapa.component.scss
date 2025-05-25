@@ -50,11 +50,12 @@
 .jogadora {
   width: 42px;
   height: 42px;
-  background-image: url('../../assets/playerStyle2.png');
+  background-image: url('../../assets/playerStyle3.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
+  border: 2px solid #f8e5b5;
   position: absolute;
   z-index: 3;
   transition: top 0.4s ease, left 0.4s ease;

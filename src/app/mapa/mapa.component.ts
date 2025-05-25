@@ -53,6 +53,8 @@ export class MapaComponent implements AfterViewInit {
 
   atualizarPosicao() {
     const fase = this.fasesRef.get(this.faseAtual);
+    const borda = 2; // NUMERO DE PIXELS DA BORDA DA JOGADORA
+
     if (!fase) return;
 
     const el = fase.nativeElement as HTMLElement;
@@ -60,8 +62,8 @@ export class MapaComponent implements AfterViewInit {
 
     if (!mapa) return;
 
-    this.top = `${el.offsetTop - 24}px`;
-    this.left = `${el.offsetLeft + el.offsetWidth / 2 - 21}px`;
+    this.top = `${el.offsetTop - 24 - borda}px`;
+    this.left = `${el.offsetLeft + el.offsetWidth / 2 - 21 - borda}px`;
   }
 
   get playerStyle() {
