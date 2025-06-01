@@ -1,0 +1,71 @@
+/* TELA DE INTRODUÇÃO */
+.tela-intro {
+  background-color: #222;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  gap: 50px;
+  font-family: Inter;
+}
+
+.divBemVindo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.imagemBau {
+  width: 10rem;
+  height: 10rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../assets/bau-do-tesouro.png);
+}
+
+.tela-intro h1 {
+  margin: 30px;
+  font-size: 7rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+}
+
+.tela-intro h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.botoes-intro {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.botao-sim,
+.botao-nao {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.botao-sim {
+  background: linear-gradient(to right, #2d6a3b, #638d1e); // verde
+  color: #fff;
+}
+
+.botao-sim:hover,
+.botao-nao:hover {
+  transform: scale(1.05);
+}
