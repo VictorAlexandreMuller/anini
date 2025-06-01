@@ -1,3 +1,11 @@
+.plano-de-fundo {
+  background-image: url(../../assets/30330.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
 .container-botoes {
   display: flex;
   justify-content: center;
@@ -71,7 +79,7 @@
   position: fixed;
   inset: 0;
   background-color: black;
-  animation: fadeOut 1s ease forwards;
+  animation: fadeOut 5s ease forwards;
   z-index: 1000;
 }
 
@@ -90,7 +98,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid red;
 }
 
 .jogo-container.bloqueado {
