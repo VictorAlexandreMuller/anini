@@ -17,9 +17,12 @@ export class JogoComponent implements AfterViewInit {
   carregado = false;
   mostrarModal = false;
 
-  ngAfterViewInit() {
-    setTimeout(() => (this.mostrarFade = false), 1000);
-  }
+ ngAfterViewInit() {
+  setTimeout(() => {
+    this.mostrarFade = false;
+    this.carregado = true;
+  }, 0);
+}
 
   fecharInstrucoes() {
     this.mostrarInstrucoes = false;
