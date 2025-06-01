@@ -1,3 +1,2 @@
-<app-apresentacao *ngIf="tela === 'apresentacao'" (continuar)="irParaInstrucoes()"></app-apresentacao>
-<app-instrucoes *ngIf="tela === 'instrucoes'" (entendi)="iniciarJogo()"></app-instrucoes>
+<app-apresentacao *ngIf="tela === 'apresentacao'" (continuar)="irParaJogo()"></app-apresentacao>
 <app-jogo *ngIf="tela === 'jogo'"></app-jogo>

@@ -1,21 +1,35 @@
-<div class="container-geral">
-  <div class="container-botoes" *ngIf="carregado">
-    <button
-      class="btn-fase voltar"
-      (click)="voltarFase()"
-      [disabled]="mapaComponent.faseAtual === 0"
-    >
-      ◀ Voltar fase
-    </button>
+<div class="fade-tela" *ngIf="mostrarFade"></div>
 
-    <button
-      class="btn-fase avancar"
-      (click)="avancarFase()"
-      [disabled]="mapaComponent.faseAtual === 10"
-    >
-      ▶ Próxima fase
-    </button>
+<app-instrucoes
+  *ngIf="mostrarInstrucoes"
+  (fechar)="fecharInstrucoes()"
+></app-instrucoes>
+
+<div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
+  <!-- BOTÕES SUPERIORES DIREITA -->
+  <div class="menu-superior">
+    <button (click)="irParaInicio()">Voltar à Tela Inicial</button>
+    <button (click)="abrirModal()">Instruções</button>
   </div>
 
-  <app-mapa #mapaRef></app-mapa>
+  <!-- BOTÕES DE FASES EXISTENTES -->
+  <div class="container-geral">
+    <div class="container-botoes" *ngIf="carregado">
+      <button
+        class="btn-fase voltar"
+        (click)="voltarFase()"
+        [disabled]="mapaComponent.faseAtual === 0"
+      >
+        ◀ Voltar fase
+      </button>
+      <button
+        class="btn-fase avancar"
+        (click)="avancarFase()"
+        [disabled]="mapaComponent.faseAtual === 10"
+      >
+        ▶ Próxima fase
+      </button>
+    </div>
+    <app-mapa #mapaRef></app-mapa>
+  </div>
 </div>

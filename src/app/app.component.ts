@@ -7,18 +7,14 @@ import { JogoComponent } from './jogo/jogo.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ApresentacaoComponent, InstrucoesComponent, JogoComponent],
+  imports: [CommonModule, ApresentacaoComponent, JogoComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  tela: 'apresentacao' | 'instrucoes' | 'jogo' = 'apresentacao';
+  tela: 'apresentacao' | 'jogo' = 'apresentacao';
 
-  irParaInstrucoes() {
-    this.tela = 'instrucoes';
-  }
-
-  iniciarJogo() {
+  irParaJogo() {
     this.tela = 'jogo';
   }
 }

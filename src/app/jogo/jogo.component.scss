@@ -54,3 +54,46 @@
 .btn-fase.voltar {
   background: linear-gradient(135deg, #1f4037, #99f2c8); // verde escuro → claro
 }
+
+.menu-superior {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+
+  button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  button:hover {
+    background: #555;
+  }
+}
+
+.fade-tela {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  animation: fadeOut 1s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+.jogo-container.bloqueado {
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(2px);
+}

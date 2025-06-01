@@ -1,9 +1,11 @@
-<div class="tela-instrucoes">
-  <div class="card-regras">
-    <div class="card">Encontre todas as fases.</div>
-    <div class="card">Avance e colete tesouros.</div>
-    <div class="card">Complete todas as etapas!</div>
+<div class="modal-overlay" (click)="fechar.emit()">
+  <div class="modal-conteudo" (click)="$event.stopPropagation()">
+    <h2>Regras do Jogo</h2>
+    <div class="cards">
+      <div class="card">🔍 Encontre as fases do mapa</div>
+      <div class="card">🕹️ Avance e complete todas</div>
+      <div class="card">🏆 Chegue até a fase bônus!</div>
+    </div>
+    <button (click)="fechar.emit()">Entendi</button>
   </div>
-
-  <button (click)="entendi.emit()" class="btn-entendi">ENTENDI</button>
 </div>
