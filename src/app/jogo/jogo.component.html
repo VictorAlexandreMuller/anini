@@ -6,31 +6,43 @@
     (fechar)="fecharInstrucoes()"
   ></app-instrucoes>
 
+  <!-- BOTÕES SUPERIORES DIREITA -->
+  <div class="menu-superior">
+    <button (click)="irParaInicio()">Voltar à Tela Inicial</button>
+    <button (click)="abrirModal()">Instruções</button>
+  </div>
+
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
-    <!-- BOTÕES SUPERIORES DIREITA -->
-    <div class="menu-superior">
-      <button (click)="irParaInicio()">Voltar à Tela Inicial</button>
-      <button (click)="abrirModal()">Instruções</button>
-    </div>
-    <!-- BOTÕES DE FASES EXISTENTES -->
-    <div class="container-botoes" *ngIf="carregado">
-      <button
-        class="btn-fase voltar"
-        (click)="voltarFase()"
-        [disabled]="mapaComponent.faseAtual === 0"
-      >
-        ◀ Voltar fase
-      </button>
-      <button
-        class="btn-fase avancar"
-        (click)="avancarFase()"
-        [disabled]="mapaComponent.faseAtual === 10"
-      >
-        ▶ Próxima fase
-      </button>
-    </div>
-    <div class="divMapa">
-      <app-mapa #mapaRef></app-mapa>
+    <div class="componenteMapaComCards">
+      <div class="divMapa">
+        <app-mapa #mapaRef></app-mapa>
+      </div>
+      <div class="cardsExplicativosCacaAoTesouro">
+        <div>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam,
+          blanditiis! Accusantium delectus, non inventore dignissimos dolorum
+          quisquam ipsam neque est qui et atque, impedit natus itaque deleniti
+          ipsum soluta repudiandae.
+        </div>
+        <input class="inputCodigoTesouro" type="text" />
+        <!-- BOTÕES DE FASES EXISTENTES -->
+        <div class="container-botoes" *ngIf="carregado">
+          <button
+            class="btn-fase voltar"
+            (click)="voltarFase()"
+            [disabled]="mapaComponent.faseAtual === 0"
+          >
+            ◀ Voltar fase
+          </button>
+          <button
+            class="btn-fase avancar"
+            (click)="avancarFase()"
+            [disabled]="mapaComponent.faseAtual === 10"
+          >
+            ▶ Próxima fase
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
