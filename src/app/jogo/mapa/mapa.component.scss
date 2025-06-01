@@ -1,17 +1,12 @@
 .mapa {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 32px;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+  padding: 30px 0px;
   background-image: url('../../../assets/mapa.png');
   background-repeat: repeat;
   background-size: auto;
-  border: 6px ridge #3e2f1c;
-  border-radius: 20px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   position: relative;
 }
 
@@ -28,6 +23,7 @@
 .fase {
   width: 52px;
   height: 52px;
+  margin: 10px 40px;
   background: radial-gradient(circle, gold, orange);
   border-radius: 50%;
   border: 2px solid #fff;
