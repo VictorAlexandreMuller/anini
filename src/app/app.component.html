@@ -1,21 +1,3 @@
-<div class="container-geral">
-  <div class="container-botoes" *ngIf="carregado">
-    <button
-      class="btn-fase voltar"
-      (click)="voltarFase()"
-      [disabled]="mapaComponent.faseAtual === 0"
-    >
-      ◀ Voltar fase
-    </button>
-
-    <button
-      class="btn-fase avancar"
-      (click)="avancarFase()"
-      [disabled]="mapaComponent.faseAtual === 10"
-    >
-      ▶ Próxima fase
-    </button>
-  </div>
-
-  <app-mapa #mapaRef></app-mapa>
-</div>
+<app-apresentacao *ngIf="tela === 'apresentacao'" (continuar)="irParaInstrucoes()"></app-apresentacao>
+<app-instrucoes *ngIf="tela === 'instrucoes'" (entendi)="iniciarJogo()"></app-instrucoes>
+<app-jogo *ngIf="tela === 'jogo'"></app-jogo>

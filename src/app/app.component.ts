@@ -1,28 +1,24 @@
 import { Component, ViewChild } from '@angular/core';
-import { MapaComponent } from './mapa/mapa.component';
 import { CommonModule } from '@angular/common';
+import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
+import { InstrucoesComponent } from './instrucoes/instrucoes.component';
+import { JogoComponent } from './jogo/jogo.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, MapaComponent],
+  imports: [CommonModule, ApresentacaoComponent, InstrucoesComponent, JogoComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('mapaRef') mapaComponent!: MapaComponent;
+  tela: 'apresentacao' | 'instrucoes' | 'jogo' = 'apresentacao';
 
-  carregado = false;
-
-  ngAfterViewInit() {
-    setTimeout(() => (this.carregado = true), 0);
+  irParaInstrucoes() {
+    this.tela = 'instrucoes';
   }
 
-  avancarFase() {
-    this.mapaComponent.avançarFase();
-  }
-
-  voltarFase() {
-    this.mapaComponent.voltarFase();
+  iniciarJogo() {
+    this.tela = 'jogo';
   }
 }
