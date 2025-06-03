@@ -1,41 +1,41 @@
 <div class="mapa">
   <!-- Linha 1 -->
   <div class="linha">
-    <div *ngIf="mostrarFase(0)" #fase0 class="fase" [ngClass]="{ 'ativa': faseAtual === 0, 'completa': faseAtual > 0 }">1</div>
-    <div *ngIf="mostrarFase(1)" #fase1 class="fase" [ngClass]="{ 'ativa': faseAtual === 1, 'completa': faseAtual > 1 }">2</div>
+    <div *ngIf="mostrarFase(0)" #fase0 class="fase" [ngClass]="{ 'ativa': faseAtual === 0, 'completa': faseAtual > 0 }">0</div>
+    <div *ngIf="mostrarFase(1)" #fase1 class="fase" [ngClass]="{ 'ativa': faseAtual === 1, 'completa': faseAtual > 1 }">1</div>
   </div>
 
   <!-- Linha 2 -->
   <div class="linha">
-    <div *ngIf="mostrarFase(2)" #fase2 class="fase" [ngClass]="{ 'ativa': faseAtual === 2, 'completa': faseAtual > 2 }">3</div>
-    <div *ngIf="mostrarFase(3)" #fase3 class="fase" [ngClass]="{ 'ativa': faseAtual === 3, 'completa': faseAtual > 3 }">4</div>
+    <div *ngIf="mostrarFase(2)" #fase2 class="fase" [ngClass]="{ 'ativa': faseAtual === 2, 'completa': faseAtual > 2 }">2</div>
+    <div *ngIf="mostrarFase(3)" #fase3 class="fase" [ngClass]="{ 'ativa': faseAtual === 3, 'completa': faseAtual > 3 }">3</div>
   </div>
 
   <!-- Linha 3 -->
   <div class="linha central">
-    <div *ngIf="mostrarFase(4)" #fase4 class="fase" [ngClass]="{ 'ativa': faseAtual === 4, 'completa': faseAtual > 4 }">5</div>
+    <div *ngIf="mostrarFase(4)" #fase4 class="fase" [ngClass]="{ 'ativa': faseAtual === 4, 'completa': faseAtual > 4 }">4</div>
   </div>
 
   <!-- Linha 4 -->
   <div class="linha">
-    <div *ngIf="mostrarFase(5)" #fase5 class="fase" [ngClass]="{ 'ativa': faseAtual === 5, 'completa': faseAtual > 5 }">6</div>
-    <div *ngIf="mostrarFase(6)" #fase6 class="fase" [ngClass]="{ 'ativa': faseAtual === 6, 'completa': faseAtual > 6 }">7</div>
+    <div *ngIf="mostrarFase(5)" #fase5 class="fase" [ngClass]="{ 'ativa': faseAtual === 5, 'completa': faseAtual > 5 }">5</div>
+    <div *ngIf="mostrarFase(6)" #fase6 class="fase" [ngClass]="{ 'ativa': faseAtual === 6, 'completa': faseAtual > 6 }">6</div>
   </div>
 
   <!-- Linha 5 -->
   <div class="linha">
-    <div *ngIf="mostrarFase(7)" #fase7 class="fase" [ngClass]="{ 'ativa': faseAtual === 7, 'completa': faseAtual > 7 }">8</div>
-    <div *ngIf="mostrarFase(8)" #fase8 class="fase" [ngClass]="{ 'ativa': faseAtual === 8, 'completa': faseAtual > 8 }">9</div>
+    <div *ngIf="mostrarFase(7)" #fase7 class="fase" [ngClass]="{ 'ativa': faseAtual === 7, 'completa': faseAtual > 7 }">7</div>
+    <div *ngIf="mostrarFase(8)" #fase8 class="fase" [ngClass]="{ 'ativa': faseAtual === 8, 'completa': faseAtual > 8 }">8</div>
   </div>
 
   <!-- Linha 6 -->
   <div class="linha central">
-    <div *ngIf="mostrarFase(9)" #fase9 class="fase" [ngClass]="{ 'ativa': faseAtual === 9, 'completa': faseAtual > 9 }">Final</div>
+    <div *ngIf="mostrarFase(9)" #fase9 class="fase" [ngClass]="{ 'ativa': faseAtual === 9, 'completa': faseAtual > 9 }">9</div>
   </div>
 
   <!-- Linha 7 -->
   <div class="linha central">
-    <div *ngIf="mostrarFase(10)" #fase10 class="fase" [ngClass]="{ 'ativa': faseAtual === 10, 'completa': faseAtual > 10 }">Bônus</div>
+    <div *ngIf="mostrarFase(10)" #fase10 class="fase" [ngClass]="{ 'ativa': faseAtual === 10, 'completa': faseAtual > 10 }">10</div>
   </div>
 
   <!-- Boneco fixo com animação -->
