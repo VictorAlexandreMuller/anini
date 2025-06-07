@@ -37,6 +37,13 @@ export class MapaComponent implements AfterViewInit {
     return false;
   }
 
+  mostrarBloco(y: number): boolean {
+    if (y === 1) return true;
+    if (y === 2) return this.faseAtual >= 10;
+    if (y === 3) return this.faseAtual >= 20;
+    return false;
+  }
+
   avançarFase() {
     if (this.faseAtual < 30) {
       this.faseAtual++;

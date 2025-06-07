@@ -13,31 +13,36 @@
   </div>
 
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
-      <div class="cardsExplicativosCacaAoTesouro">
-        <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam,
-          blanditiis! Accusantium delectus, non inventore dignissimos dolorum
-          quisquam ipsam neque est qui et atque, impedit natus itaque deleniti
-          ipsum soluta repudiandae.
-        </div>
-        <input class="inputCodigoTesouro" type="text" />
-        <!-- BOTÕES DE FASES EXISTENTES -->
-        <div class="container-botoes" *ngIf="carregado">
-          <button
-            class="btn-fase voltar"
-            (click)="voltarFase()"
-            [disabled]="mapaComponent.faseAtual === 0"
-          >
-            ◀ Voltar fase
-          </button>
-          <button
-            class="btn-fase avancar"
-            (click)="avancarFase()"
-            [disabled]="mapaComponent.faseAtual === 30"
-          >
-            ▶ Próxima fase
-          </button>
-        </div>
+    <div class="cardsExplicativosCacaAoTesouro">
+      <div *ngIf="mapaComponent">
+        {{ dicas[mapaComponent.faseAtual] }}
+      </div>
+
+      <input
+        class="inputCodigoTesouro"
+        type="text"
+        (input)="verificarCodigo($event)"
+        [value]="codigoDigitado"
+      />
+
+      <div class="container-botoes" *ngIf="carregado">
+        <button
+          class="btn-fase voltar"
+          (click)="voltarFase()"
+          [disabled]="mapaComponent.faseAtual === 0"
+        >
+          ◀ Voltar fase
+        </button>
+        <button
+          class="btn-fase avancar"
+          (click)="avancarFase()"
+          [disabled]="
+            !mapaComponent || !codigoValido || mapaComponent.faseAtual === 30
+          "
+        >
+          ▶ Próxima fase
+        </button>
+      </div>
     </div>
     <div class="divMapa">
       <app-mapa #mapaRef></app-mapa>
