@@ -13,10 +13,6 @@
   </div>
 
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
-    <div class="componenteMapaComCards">
-      <div class="divMapa">
-        <app-mapa #mapaRef></app-mapa>
-      </div>
       <div class="cardsExplicativosCacaAoTesouro">
         <div>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam,
@@ -37,12 +33,14 @@
           <button
             class="btn-fase avancar"
             (click)="avancarFase()"
-            [disabled]="mapaComponent.faseAtual === 10"
+            [disabled]="mapaComponent.faseAtual === 30"
           >
             ▶ Próxima fase
           </button>
         </div>
-      </div>
+    </div>
+    <div class="divMapa">
+      <app-mapa #mapaRef></app-mapa>
     </div>
   </div>
 </div>
