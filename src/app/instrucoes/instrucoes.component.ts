@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-instrucoes',
   standalone: true,
-  imports: [CommonModule, NgbCarouselModule],
+  imports: [CommonModule],
   templateUrl: './instrucoes.component.html',
   styleUrls: ['./instrucoes.component.scss'],
 })
