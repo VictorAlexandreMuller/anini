@@ -1,11 +1,36 @@
 <div class="modal-overlay" (click)="fechar.emit()">
   <div class="modal-conteudo" (click)="$event.stopPropagation()">
-    <h2>Regras do Jogo</h2>
-    <div class="cards">
-      <div class="card">🔍 Encontre as fases do mapa</div>
-      <div class="card">🕹️ Avance e complete todas</div>
-      <div class="card">🏆 Chegue até a fase bônus!</div>
+    <h2 class="modal-titulo mb-3">Regras do Jogo</h2>
+
+    <div
+      class="carousel-container mb-3 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="carousel-slide"
+        *ngFor="let item of slides; let i = index"
+        [class.active]="i === currentSlide"
+      >
+        <div class="card-carousel" [innerHTML]="item">{{ item }}</div>
+      </div>
     </div>
-    <button (click)="fechar.emit()">Entendi</button>
+    <div class="carousel-controles">
+      <button
+        (click)="voltarSlide()"
+        [disabled]="currentSlide === 0"
+        class="btn-seta"
+      >
+        ◀
+      </button>
+
+      <button
+        (click)="avancarSlide()"
+        [disabled]="currentSlide === slides.length - 1"
+        class="btn-seta"
+      >
+        ▶
+      </button>
+    </div>
+
+    <button class="btn-fechar" (click)="fechar.emit()">Entendi</button>
   </div>
 </div>
