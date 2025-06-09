@@ -19,6 +19,10 @@ export class JogoComponent implements AfterViewInit {
   codigoDigitado: string = '';
   codigoValido: boolean = false;
 
+get faseAtual(): number {
+  return this.mapaComponent?.faseAtual ?? 0;
+}
+
   dicas: string[] = [
     'Esse é o início do jogo', // Fase 0
     'Você está conseguindo, muito bem!', // Fase 1
@@ -99,14 +103,18 @@ export class JogoComponent implements AfterViewInit {
   }
 
   avancarFase() {
+  if (this.mapaComponent) {
     this.mapaComponent.avançarFase();
     this.codigoDigitado = '';
     this.codigoValido = false;
   }
+}
 
   voltarFase() {
+  if (this.mapaComponent) {
     this.mapaComponent.voltarFase();
   }
+}
 
   irParaInicio() {
     // aqui você volta para a tela inicial

@@ -14,7 +14,7 @@
 
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
     <div class="cardsExplicativosCacaAoTesouro">
-      <div *ngIf="mapaComponent">
+      <div class="dicas" *ngIf="mapaComponent">
         {{ dicas[mapaComponent.faseAtual] }}
       </div>
 
@@ -33,7 +33,7 @@
         >
           ◀
         </button>
-        <button
+        <!-- <button
           class="btn-fase avancar"
           (click)="avancarFase()"
           [disabled]="
@@ -41,7 +41,7 @@
           "
         >
           ▶ Próxima fase
-        </button>
+        </button> -->
         <button
           class="btn-fase avancar"
           (click)="avancarFase()">
