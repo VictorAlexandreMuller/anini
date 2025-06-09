@@ -70,7 +70,7 @@ export class MapaComponent implements AfterViewInit {
     if (!mapa) return;
 
     this.top = `${el.offsetTop - 24 - borda}px`;
-    this.left = `${el.offsetLeft + el.offsetWidth / 2 - 21 - borda}px`;
+    this.left = `${el.offsetLeft + el.offsetWidth / 2 - 20}px`;
   }
 
   get playerStyle() {

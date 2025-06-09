@@ -7,13 +7,13 @@
   ></app-instrucoes>
 
   <!-- BOTÕES SUPERIORES DIREITA -->
-  <div class="menu-superior">
+  <div class="menu-superior pt-3 mb-3">
     <button (click)="irParaInicio()">Voltar à Tela Inicial</button>
     <button (click)="abrirModal()">Instruções</button>
   </div>
 
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
-    <div class="cardsExplicativosCacaAoTesouro">
+    <div class="cardsExplicativosCacaAoTesouro mb-3">
       <div class="dicas" *ngIf="mapaComponent">
         {{ dicas[mapaComponent.faseAtual] }}
       </div>

@@ -11,10 +11,11 @@
   justify-content: space-around;
   gap: 12px;
   width: 100%;
-  padding: 16px;
   box-sizing: border-box;
+  font-size: 15px;
 
   button {
+    width: 50%;
     background: #333;
     color: white;
     border: none;
