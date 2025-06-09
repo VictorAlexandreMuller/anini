@@ -1,19 +1,30 @@
 <div class="tela-intro">
-  <br>
-  <div class="imagemBau"></div>
-  <div class="divBemVindo">
-    <div class="imagemBau"></div>
-    <h1>BEM-VINDO !!</h1>
-    <div class="imagemBau"></div>
-  </div>
-  <h1>CAÇA AO TESOURO VIRTUAL</h1>
-
-  <div class="divBemVindo">
-    <div class="imagemBau"></div>
-    <div class="botoes-intro">
-      <h2>Are you ready?</h2>
-      <button (click)="continuar.emit()" class="botao-sim">Lets Bora!!</button>
+  <div class="d-flex flex-column align-items-center">
+    <div
+      class="d-flex flex-row align-items-center justify-content-between mb-4 mt-3"
+      style="width: 95%"
+    >
+      <div class="imagemBau"></div>
+      <div class="imagemBau"></div>
+      <div class="imagemBau"></div>
     </div>
-    <div class="imagemBau"></div>
+    <p class="teste mb-3">BEM - VINDO</p>
+    <p class="teste mb-3">CAÇA AO TESOURO VIRTUAL</p>
+    <!-- <p class="teste mb-3">Are you ready?</p> -->
+    <div class="d-flex flex-row align-items-end justify-content-around w-100 mb-4">
+      <button (click)="continuar.emit()" class="button-vibrance mb-4">
+        Jogar
+      </button>
+      <div class="imagemm"></div>
+    </div>
+
+    <div
+      class="d-flex flex-row align-items-center justify-content-between"
+      style="width: 95%"
+    >
+      <div class="imagemBau"></div>
+      <div class="imagemBau"></div>
+      <div class="imagemBau"></div>
+    </div>
   </div>
 </div>

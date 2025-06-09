@@ -1,71 +1,80 @@
-/* TELA DE INTRODUÇÃO */
 .tela-intro {
-  background-color: #222;
+  background-color: #151727;
   color: white;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
   text-align: center;
-  gap: 50px;
-  font-family: Inter;
 }
 
-.divBemVindo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+.imagemm {
+  background-image: url(../../assets/otimista.png);
+  width: 170px;
+  height: 170px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .imagemBau {
-  width: 10rem;
-  height: 10rem;
+  width: 5rem;
+  height: 5rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../../assets/bau-do-tesouro.png);
 }
 
-.tela-intro h1 {
-  margin: 30px;
-  font-size: 7rem;
-  line-height: 2.2rem;
-  font-weight: bold;
+.teste {
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0px 0px 5px rgb(32, 255, 244);
 }
 
-.tela-intro h2 {
+.tela-intro p {
   font-size: 2rem;
-  font-weight: normal;
-}
-
-.botoes-intro {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.botao-sim,
-.botao-nao {
-  padding: 12px 20px;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
   font-weight: bold;
-  transition: transform 0.2s;
+  font-family: "Prompt";
+  z-index: 5;
 }
 
-.botao-sim {
-  background: linear-gradient(to right, #2d6a3b, #638d1e); // verde
-  color: #fff;
+.button-vibrance {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  font-family: "Prompt";
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 5;
+  overflow: hidden;
+  border: none;
+  padding: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 5px; // espessura da borda
+    // background: linear-gradient(90deg, #47cfe3, #f7f6b1, #f279a4, #47cfe3);
+    background: linear-gradient(90deg, #ffffff, #ff0000, #f2ff00, #ffffff);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s infinite linear;
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+  }
 }
 
-.botao-sim:hover,
-.botao-nao:hover {
-  transform: scale(1.05);
+@keyframes gradientAnimation {
+  0% {
+    background-position: -100% -50%;
+  }
+  100% {
+    background-position: 100% -50%;
+  }
 }
