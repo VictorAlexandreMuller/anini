@@ -29,6 +29,8 @@ export class JogoComponent implements AfterViewInit {
   fraseParabensAtual: string = '';
   indiceParteAtual = 0;
   partesDicaAtual: string[] = [];
+  partesFraseParabensAtual: string[] = [];
+  indiceParteParabensAtual = 0;
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
@@ -229,8 +231,32 @@ export class JogoComponent implements AfterViewInit {
   }
 
   mostrarModalParabens() {
-    const faseAtual = this.mapaComponent?.faseAtual + 1;
-    this.fraseParabensAtual = this.frasesParabens[faseAtual] || 'Parabéns!';
+    this.atualizarPartesFraseParabens();
     this.modalAberto = true;
+  }
+
+  atualizarPartesFraseParabens(): void {
+    const faseAtual = this.mapaComponent?.faseAtual + 1 || 0;
+    const fraseCompleta = this.frasesParabens[faseAtual] || 'Parabéns!';
+    const tamanhoMaximo = 200;
+
+    this.partesFraseParabensAtual =
+      fraseCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];
+    this.indiceParteParabensAtual = 0;
+  }
+
+  avancarParteParabens(): void {
+    if (
+      this.indiceParteParabensAtual <
+      this.partesFraseParabensAtual.length - 1
+    ) {
+      this.indiceParteParabensAtual++;
+    }
+  }
+
+  voltarParteParabens(): void {
+    if (this.indiceParteParabensAtual > 0) {
+      this.indiceParteParabensAtual--;
+    }
   }
 }

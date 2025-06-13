@@ -223,3 +223,30 @@
     cursor: default;
   }
 }
+
+.navegacao-parabens {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+  }
+
+  span {
+    color: black;
+    font-size: 14px;
+    font-family: 'Prompt';
+  }
+
+  button:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}

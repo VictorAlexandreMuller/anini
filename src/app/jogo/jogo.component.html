@@ -12,9 +12,35 @@
   ></app-instrucoes>
 
   <ng-template #modalParabens let-modal>
-    <div class="modal-backdrop" (click)="fecharModalParabens()"></div>
+    <div  (click)="fecharModalParabens()"></div>
     <div class="modal-conteudo">
-      <p>{{ fraseParabensAtual }}</p>
+      <p>{{ partesFraseParabensAtual[indiceParteParabensAtual] }}</p>
+
+      <div
+        class="navegacao-parabens"
+        *ngIf="partesFraseParabensAtual.length > 1"
+      >
+        <button
+          (click)="voltarParteParabens()"
+          [disabled]="indiceParteParabensAtual === 0"
+        >
+          ◀
+        </button>
+
+        <span
+          >{{ indiceParteParabensAtual + 1 }} /
+          {{ partesFraseParabensAtual.length }}</span
+        >
+
+        <button
+          (click)="avancarParteParabens()"
+          [disabled]="
+            indiceParteParabensAtual === partesFraseParabensAtual.length - 1
+          "
+        >
+          ▶
+        </button>
+      </div>
       <button (click)="fecharModalParabens()">Fechar</button>
     </div>
   </ng-template>
