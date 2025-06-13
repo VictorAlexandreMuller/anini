@@ -106,7 +106,7 @@ export class JogoComponent implements AfterViewInit {
 
   frasesParabens: string[] = [
     '', // Fase 0 não tem
-    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
+    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
     'Parabéns, você está conseguindo, continue!', // Fase 2
     'Mais um presente achado com sucesso!', // Fase 3
     'Você é incrível, olha só esse avanço!', // Fase 4
@@ -238,7 +238,7 @@ export class JogoComponent implements AfterViewInit {
   atualizarPartesFraseParabens(): void {
     const faseAtual = this.mapaComponent?.faseAtual + 1 || 0;
     const fraseCompleta = this.frasesParabens[faseAtual] || 'Parabéns!';
-    const tamanhoMaximo = 200;
+    const tamanhoMaximo = 550;
 
     this.partesFraseParabensAtual =
       fraseCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];

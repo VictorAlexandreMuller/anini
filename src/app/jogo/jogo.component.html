@@ -11,8 +11,9 @@
     (fechar)="fecharInstrucoes()"
   ></app-instrucoes>
 
+  <!-- INICIO MODAL PARABENS POR COMPLETAR A FASE -->
   <ng-template #modalParabens let-modal>
-    <div  (click)="fecharModalParabens()"></div>
+    <div (click)="fecharModalParabens()"></div>
     <div class="modal-conteudo">
       <p>{{ partesFraseParabensAtual[indiceParteParabensAtual] }}</p>
 
@@ -31,7 +32,6 @@
           >{{ indiceParteParabensAtual + 1 }} /
           {{ partesFraseParabensAtual.length }}</span
         >
-
         <button
           (click)="avancarParteParabens()"
           [disabled]="
@@ -44,49 +44,62 @@
       <button (click)="fecharModalParabens()">Fechar</button>
     </div>
   </ng-template>
+  <!-- FIM MODAL PARABENS POR COMPLETAR A FASE -->
 
   <div *ngIf="modalAberto" class="modal-container">
     <ng-container *ngTemplateOutlet="modalParabens"></ng-container>
   </div>
 
-  <!-- BOTÕES SUPERIORES DIREITA -->
+  <!-- INICIO BOTÕES SUPERIORES DIREITA -->
   <div class="menu-superior pt-3 mb-3">
     <button (click)="irParaInicio()">Voltar à Tela Inicial</button>
     <button (click)="abrirModal()">Instruções</button>
   </div>
+  <!-- FIM BOTOES SUPERIORES DIREITA -->
 
+  <!-- INICIO JOGO, CARD DICAS + MAPA -->
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
-      <div class="dicas" *ngIf="mapaComponent">
-        {{ partesDicaAtual[indiceParteAtual] }}
+      <div class="divMaiorDicas mb-3">
+        <!-- INICIO DIV DICAS -->
+        <div class="divDicasEsetinhas" *ngIf="mapaComponent">
+          {{ partesDicaAtual[indiceParteAtual] }}
 
-        <div class="navegacao-dica" *ngIf="partesDicaAtual.length > 1">
-          <button
-            (click)="voltarParteDica()"
-            [disabled]="indiceParteAtual === 0"
-          >
-            ◀
-          </button>
+          <div class="navegacao-dica" *ngIf="partesDicaAtual.length > 1">
+            <!-- AVANÇAR DICA 1/3 -->
+            <button
+              (click)="voltarParteDica()"
+              [disabled]="indiceParteAtual === 0"
+            >
+              ◀
+            </button>
 
-          <span>{{ indiceParteAtual + 1 }} / {{ partesDicaAtual.length }}</span>
+            <span
+              >{{ indiceParteAtual + 1 }} / {{ partesDicaAtual.length }}</span
+            >
 
-          <button
-            (click)="avancarParteDica()"
-            [disabled]="indiceParteAtual === partesDicaAtual.length - 1"
-          >
-            ▶
-          </button>
+            <!-- VOLTAR DICA 1/3 -->
+            <button
+              (click)="avancarParteDica()"
+              [disabled]="indiceParteAtual === partesDicaAtual.length - 1"
+            >
+              ▶
+            </button>
+          </div>
         </div>
+        <!-- FIM DIV DICAS -->
+
+        <!-- INPUT CODIGOS DA FASE -->
+        <input
+          class="inputCodigoTesouro"
+          type="text"
+          (input)="verificarCodigo($event)"
+          [value]="codigoDigitado"
+        />
       </div>
 
-      <input
-        class="inputCodigoTesouro"
-        type="text"
-        (input)="verificarCodigo($event)"
-        [value]="codigoDigitado"
-      />
-
       <div class="container-botoes" *ngIf="carregado">
+        <!-- INICIO BOTAO VOLTAR DICA -->
         <button
           class="btn-fase voltar"
           (click)="voltarFase()"
@@ -94,8 +107,11 @@
         >
           ◀
         </button>
+        <!-- FIM BOTAO VOLTAR DICA -->
+
+        <!-- INICIO BOTAO PROXIMA FASE -->
         <button
-          class="btn-fase avancar"
+          class="btn-fase"
           (click)="mostrarModalParabens()"
           [disabled]="
             !mapaComponent || !codigoValido || mapaComponent.faseAtual === 30
@@ -103,16 +119,23 @@
         >
           ▶ Próxima fase
         </button>
+        <!-- FIM BOTAO PROXIMA FASE -->
+
+        <!-- INICIO BOTAO PASSE LIVRE -->
         <button
           class="btn-fase avancar PASSE-LIVRE"
           (click)="mostrarModalParabens()"
         >
           ▶
         </button>
+        <!-- FIM BOTAO PASSE LIVRE -->
       </div>
     </div>
+
+    <!-- DIV MAPA -->
     <div class="divMapa">
       <app-mapa #mapaRef></app-mapa>
     </div>
+    <!-- FIM DIV MAPA -->
   </div>
 </div>

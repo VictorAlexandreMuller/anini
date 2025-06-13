@@ -73,36 +73,48 @@
   border: 3px solid white;
   border-radius: 20px;
   box-shadow: 0px 0px 15px white;
-  font-family: 'Prompt';
+  font-family: "Prompt";
   color: white;
   width: 95%;
-  height: 250px;
+  // height: 250px;
   background: linear-gradient(180deg, #10073a, #5e6190);
+
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.dicas {
-  
-}
-
-.inputCodigoTesouro{
+.inputCodigoTesouro {
   text-align: center;
   border-radius: 20px;
 }
 
+.divMaiorDicas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.divDicasEsetinhas {
+  height: 180px;
+}
+
 .container-botoes {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: end;
   justify-content: center;
   gap: 12px;
-  position: absolute;
-  bottom: 2%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+
+  // position: absolute;
+  // bottom: 2%;
+  // left: 50%;
+  // transform: translateX(-50%);
 }
 
 .btn-fase {
@@ -182,19 +194,62 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff8f8;
+
+  background: #2f2f2f;
+  color: white;
+
   padding: 24px;
   border-radius: 12px;
-  max-width: 90%;
+
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgb(203, 196, 91);
   font-size: 18px;
   animation: aparecer 0.3s ease;
+
+  width: 600px;
+  max-width: 90%;
+
+  p {
+    height: 400px;
+  }
+
+  .navegacao-parabens {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      color: black;
+      cursor: pointer;
+    }
+
+    span {
+      color: white;
+      font-size: 14px;
+      font-family: "Prompt";
+    }
+
+    button:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
 }
 
 @keyframes aparecer {
-  from { opacity: 0; transform: translate(-50%, -40%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .navegacao-dica {
@@ -215,34 +270,7 @@
   span {
     color: white;
     font-size: 14px;
-    font-family: 'Prompt';
-  }
-
-  button:disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
-}
-
-.navegacao-parabens {
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-
-  button {
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-  }
-
-  span {
-    color: black;
-    font-size: 14px;
-    font-family: 'Prompt';
+    font-family: "Prompt";
   }
 
   button:disabled {
