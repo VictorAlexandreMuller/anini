@@ -27,6 +27,8 @@ export class JogoComponent implements AfterViewInit {
   codigoValido: boolean = false;
   modalAberto: boolean = false;
   fraseParabensAtual: string = '';
+  indiceParteAtual = 0;
+  partesDicaAtual: string[] = [];
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
@@ -134,11 +136,32 @@ export class JogoComponent implements AfterViewInit {
     'Você venceu! Encontrou tudo com amor! 💖', // Fase 30
   ];
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     setTimeout(() => {
       this.mostrarFade = false;
       this.carregado = true;
+      this.atualizarPartesDica();
     }, 0);
+  }
+
+  atualizarPartesDica(): void {
+    const dicaCompleta = this.dicas[this.mapaComponent?.faseAtual || 0] || '';
+    const tamanhoMaximo = 200;
+    this.partesDicaAtual =
+      dicaCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];
+    this.indiceParteAtual = 0;
+  }
+
+  avancarParteDica(): void {
+    if (this.indiceParteAtual < this.partesDicaAtual.length - 1) {
+      this.indiceParteAtual++;
+    }
+  }
+
+  voltarParteDica(): void {
+    if (this.indiceParteAtual > 0) {
+      this.indiceParteAtual--;
+    }
   }
 
   exibirInstrucoes() {
@@ -156,19 +179,17 @@ export class JogoComponent implements AfterViewInit {
     const faseAtual = this.mapaComponent.faseAtual + 1;
     this.fraseParabensAtual = this.frasesParabens[faseAtual] || 'Parabéns!';
     this.modalAberto = true;
-
-    // Aguarda o usuário fechar o modal antes de avançar de verdade
   }
 
   voltarFase() {
     if (this.mapaComponent) {
       this.mapaComponent.voltarFase();
+      this.atualizarPartesDica();
     }
   }
 
   irParaInicio() {
-    // aqui você volta para a tela inicial
-    window.location.href = '/'; // ou algum método de rotas se estiver usando Router
+    window.location.href = '/';
   }
 
   abrirModal() {
@@ -190,7 +211,6 @@ export class JogoComponent implements AfterViewInit {
 
     const faseAtual = this.mapaComponent.faseAtual;
 
-    // Não precisa validar código na última fase
     if (faseAtual >= this.codigosFases.length) {
       this.codigoValido = false;
       return;
@@ -203,6 +223,7 @@ export class JogoComponent implements AfterViewInit {
   fecharModalParabens() {
     this.modalAberto = false;
     this.mapaComponent.avançarFase();
+    this.atualizarPartesDica();
     this.codigoDigitado = '';
     this.codigoValido = false;
   }

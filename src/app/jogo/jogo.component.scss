@@ -196,3 +196,30 @@
   from { opacity: 0; transform: translate(-50%, -40%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
+
+.navegacao-dica {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  span {
+    color: white;
+    font-size: 14px;
+    font-family: 'Prompt';
+  }
+
+  button:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}

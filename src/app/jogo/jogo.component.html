@@ -32,7 +32,25 @@
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
       <div class="dicas" *ngIf="mapaComponent">
-        {{ dicas[mapaComponent.faseAtual] }}
+        {{ partesDicaAtual[indiceParteAtual] }}
+
+        <div class="navegacao-dica" *ngIf="partesDicaAtual.length > 1">
+          <button
+            (click)="voltarParteDica()"
+            [disabled]="indiceParteAtual === 0"
+          >
+            ◀
+          </button>
+
+          <span>{{ indiceParteAtual + 1 }} / {{ partesDicaAtual.length }}</span>
+
+          <button
+            (click)="avancarParteDica()"
+            [disabled]="indiceParteAtual === partesDicaAtual.length - 1"
+          >
+            ▶
+          </button>
+        </div>
       </div>
 
       <input
@@ -59,7 +77,10 @@
         >
           ▶ Próxima fase
         </button>
-        <button class="btn-fase avancar PASSE-LIVRE" (click)="mostrarModalParabens()">
+        <button
+          class="btn-fase avancar PASSE-LIVRE"
+          (click)="mostrarModalParabens()"
+        >
           ▶
         </button>
       </div>
