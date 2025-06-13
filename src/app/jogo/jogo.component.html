@@ -1,10 +1,27 @@
 <div class="plano-de-fundo">
   <div class="fade-tela" *ngIf="mostrarFade"></div>
 
+  <app-bem-vindo
+    *ngIf="mostrarBemVindo"
+    (fechar)="exibirInstrucoes()"
+  ></app-bem-vindo>
+
   <app-instrucoes
     *ngIf="mostrarInstrucoes"
     (fechar)="fecharInstrucoes()"
   ></app-instrucoes>
+
+  <ng-template #modalParabens let-modal>
+    <div class="modal-backdrop" (click)="fecharModalParabens()"></div>
+    <div class="modal-conteudo">
+      <p>{{ fraseParabensAtual }}</p>
+      <button (click)="fecharModalParabens()">Fechar</button>
+    </div>
+  </ng-template>
+
+  <div *ngIf="modalAberto" class="modal-container">
+    <ng-container *ngTemplateOutlet="modalParabens"></ng-container>
+  </div>
 
   <!-- BOTÕES SUPERIORES DIREITA -->
   <div class="menu-superior pt-3 mb-3">
@@ -33,19 +50,17 @@
         >
           ◀
         </button>
-        <!-- <button
+        <button
           class="btn-fase avancar"
-          (click)="avancarFase()"
+          (click)="mostrarModalParabens()"
           [disabled]="
             !mapaComponent || !codigoValido || mapaComponent.faseAtual === 30
           "
         >
           ▶ Próxima fase
-        </button> -->
-        <button
-          class="btn-fase avancar"
-          (click)="avancarFase()">
-          ▶ PASSE LIVRE
+        </button>
+        <button class="btn-fase avancar PASSE-LIVRE" (click)="mostrarModalParabens()">
+          ▶
         </button>
       </div>
     </div>

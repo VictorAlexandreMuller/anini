@@ -2,30 +2,39 @@ import { CommonModule } from '@angular/common';
 import { MapaComponent } from './mapa/mapa.component';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { InstrucoesComponent } from '../instrucoes/instrucoes.component';
+import { BemVindoComponent } from '../bem-vindo/bem-vindo.component';
 
 @Component({
   selector: 'app-jogo',
   standalone: true,
-  imports: [CommonModule, MapaComponent, InstrucoesComponent],
+  imports: [
+    CommonModule,
+    MapaComponent,
+    InstrucoesComponent,
+    BemVindoComponent,
+  ],
   templateUrl: './jogo.component.html',
   styleUrls: ['./jogo.component.scss'],
 })
 export class JogoComponent implements AfterViewInit {
   @ViewChild('mapaRef') mapaComponent!: MapaComponent;
-  mostrarInstrucoes = true;
+  mostrarBemVindo = true;
+  mostrarInstrucoes = false;
   mostrarFade = true;
   carregado = false;
   mostrarModal = false;
   codigoDigitado: string = '';
   codigoValido: boolean = false;
+  modalAberto: boolean = false;
+  fraseParabensAtual: string = '';
 
-get faseAtual(): number {
-  return this.mapaComponent?.faseAtual ?? 0;
-}
+  get faseAtual(): number {
+    return this.mapaComponent?.faseAtual ?? 0;
+  }
 
   dicas: string[] = [
     'Esse é o início do jogo', // Fase 0
-    'Você está conseguindo, muito bem!', // Fase 1
+    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
     'Continue assim!', // Fase 2
     'Já está indo longe, hein?', // Fase 3
     'Não desista agora!', // Fase 4
@@ -91,6 +100,40 @@ get faseAtual(): number {
     // Fase 30 não tem próxima, então não precisa código
   ];
 
+  frasesParabens: string[] = [
+    '', // Fase 0 não tem
+    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
+    'Parabéns, você está conseguindo, continue!', // Fase 2
+    'Mais um presente achado com sucesso!', // Fase 3
+    'Você é incrível, olha só esse avanço!', // Fase 4
+    'Eu sabia que você ia acertar!', // Fase 5
+    'Seu progresso me enche de alegria!', // Fase 6
+    'Você está arrasando demais!', // Fase 7
+    'Isso aqui está ficando emocionante!', // Fase 8
+    'Parabéns! Mais uma etapa vencida!', // Fase 9
+    'Uau, você chegou até aqui, que orgulho!', // Fase 10
+    'Você é uma campeã!', // Fase 11
+    'Continue assim, você está indo muito bem!', // Fase 12
+    'Você é brilhante! Continue!', // Fase 13
+    'Que fofa você procurando tudo direitinho!', // Fase 14
+    'Tá chegando no fim, hein!', // Fase 15
+    'Você merece todos esses momentos!', // Fase 16
+    'Cada presente é um pedacinho do meu amor!', // Fase 17
+    'Você é maravilhosa!', // Fase 18
+    'Quase lá! Faltam pouquinhos!', // Fase 19
+    'Está preparada para o final?', // Fase 20
+    'Te admiro demais!', // Fase 21
+    'Vai lá, detetive romântica!', // Fase 22
+    'Se eu fosse um presente, queria ser achado por você!', // Fase 23
+    'Você está se superando!', // Fase 24
+    'Quase no topo, meu amor!', // Fase 25
+    'Parabéns, você encontrou mais um!', // Fase 26
+    'Você chegou tão longe! ❤️', // Fase 27
+    'Seu esforço me encanta!', // Fase 28
+    'A próxima é a última, respira!', // Fase 29
+    'Você venceu! Encontrou tudo com amor! 💖', // Fase 30
+  ];
+
   ngAfterViewInit() {
     setTimeout(() => {
       this.mostrarFade = false;
@@ -98,23 +141,30 @@ get faseAtual(): number {
     }, 0);
   }
 
+  exibirInstrucoes() {
+    this.mostrarBemVindo = false;
+    this.mostrarInstrucoes = true;
+  }
+
   fecharInstrucoes() {
     this.mostrarInstrucoes = false;
   }
 
   avancarFase() {
-  if (this.mapaComponent) {
-    this.mapaComponent.avançarFase();
-    this.codigoDigitado = '';
-    this.codigoValido = false;
+    if (!this.mapaComponent) return;
+
+    const faseAtual = this.mapaComponent.faseAtual + 1;
+    this.fraseParabensAtual = this.frasesParabens[faseAtual] || 'Parabéns!';
+    this.modalAberto = true;
+
+    // Aguarda o usuário fechar o modal antes de avançar de verdade
   }
-}
 
   voltarFase() {
-  if (this.mapaComponent) {
-    this.mapaComponent.voltarFase();
+    if (this.mapaComponent) {
+      this.mapaComponent.voltarFase();
+    }
   }
-}
 
   irParaInicio() {
     // aqui você volta para a tela inicial
@@ -148,5 +198,18 @@ get faseAtual(): number {
 
     const codigoEsperado = this.codigosFases[faseAtual];
     this.codigoValido = this.codigoDigitado === codigoEsperado;
+  }
+
+  fecharModalParabens() {
+    this.modalAberto = false;
+    this.mapaComponent.avançarFase();
+    this.codigoDigitado = '';
+    this.codigoValido = false;
+  }
+
+  mostrarModalParabens() {
+    const faseAtual = this.mapaComponent?.faseAtual + 1;
+    this.fraseParabensAtual = this.frasesParabens[faseAtual] || 'Parabéns!';
+    this.modalAberto = true;
   }
 }

@@ -1,0 +1,36 @@
+<div class="modal-overlay" (click)="fechar.emit()">
+  <div class="modal-conteudo" (click)="$event.stopPropagation()">
+    <h2 class="modal-titulo mb-3">Regras do Jogo</h2>
+
+    <div
+      class="carousel-container d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="carousel-slide"
+        *ngFor="let item of slides; let i = index"
+        [class.active]="i === currentSlide"
+      >
+        <div class="card-carousel" [innerHTML]="item">{{ item }}</div>
+      </div>
+    </div>
+    <div class="carousel-controles mb-3">
+      <button
+        (click)="voltarSlide()"
+        [disabled]="currentSlide === 0"
+        class="btn-seta"
+      >
+        ◀
+      </button>
+
+      <button
+        (click)="avancarSlide()"
+        [disabled]="currentSlide === slides.length - 1"
+        class="btn-seta"
+      >
+        ▶
+      </button>
+    </div>
+
+    <button class="btn-fechar" (click)="fechar.emit()">Entendi</button>
+  </div>
+</div>

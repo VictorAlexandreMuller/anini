@@ -1,186 +1,188 @@
 <div class="mapa">
-  <div class="linha" *ngIf="mostrarBloco(1)">
-    <div style="display: flex; align-items: center;">
-      <div *ngIf="mostrarFase(0)" #fase0 class="fase" [ngClass]="{ ativa: faseAtual === 0, completa: faseAtual > 0 }">
-        0
+  <div>
+    <div class="linha" *ngIf="mostrarBloco(1)">
+      <div style="display: flex; align-items: center;">
+        <div *ngIf="mostrarFase(0)" #fase0 class="fase" [ngClass]="{ ativa: faseAtual === 0, completa: faseAtual > 0 }">
+          0
+        </div>
       </div>
-    </div>
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(1)" #fase1 class="fase" [ngClass]="{ ativa: faseAtual === 1, completa: faseAtual > 1 }">
-        1
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(1)" #fase1 class="fase" [ngClass]="{ ativa: faseAtual === 1, completa: faseAtual > 1 }">
+          1
+        </div>
+        <div *ngIf="mostrarFase(2)" #fase2 class="fase" [ngClass]="{ ativa: faseAtual === 2, completa: faseAtual > 2 }">
+          2
+        </div>
       </div>
-      <div *ngIf="mostrarFase(2)" #fase2 class="fase" [ngClass]="{ ativa: faseAtual === 2, completa: faseAtual > 2 }">
-        2
+
+      <div style="display: flex; flex-direction: column-reverse;">
+        <div *ngIf="mostrarFase(3)" #fase3 class="fase" [ngClass]="{ ativa: faseAtual === 3, completa: faseAtual > 3 }">
+          3
+        </div>
+        <div *ngIf="mostrarFase(4)" #fase4 class="fase" [ngClass]="{ ativa: faseAtual === 4, completa: faseAtual > 4 }">
+          4
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(5)" #fase5 class="fase" [ngClass]="{ ativa: faseAtual === 5, completa: faseAtual > 5 }">
+          5
+        </div>
+        <div *ngIf="mostrarFase(6)" #fase6 class="fase" [ngClass]="{ ativa: faseAtual === 6, completa: faseAtual > 6 }">
+          6
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column-reverse;">
+        <div *ngIf="mostrarFase(7)" #fase7 class="fase" [ngClass]="{ ativa: faseAtual === 7, completa: faseAtual > 7 }">
+          7
+        </div>
+        <div *ngIf="mostrarFase(8)" #fase8 class="fase" [ngClass]="{ ativa: faseAtual === 8, completa: faseAtual > 8 }">
+          8
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(9)" #fase9 class="fase" [ngClass]="{ ativa: faseAtual === 9, completa: faseAtual > 9 }">
+          9
+        </div>
+        <div *ngIf="mostrarFase(10)" #fase10 class="fase"
+          [ngClass]="{ ativa: faseAtual === 10, completa: faseAtual > 10 }">
+          10
+        </div>
       </div>
     </div>
 
-    <div style="display: flex; flex-direction: column-reverse;">
-      <div *ngIf="mostrarFase(3)" #fase3 class="fase" [ngClass]="{ ativa: faseAtual === 3, completa: faseAtual > 3 }">
-        3
+    <div class="linha" style="flex-direction: row-reverse;" *ngIf="mostrarBloco(2)">
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(11)" #fase11 class="fase"
+          [ngClass]="{ ativa: faseAtual === 11, completa: faseAtual > 11 }">
+          11
+        </div>
+
+        <div *ngIf="mostrarFase(12)" #fase12 class="fase"
+          [ngClass]="{ ativa: faseAtual === 12, completa: faseAtual > 12 }">
+          12
+        </div>
       </div>
-      <div *ngIf="mostrarFase(4)" #fase4 class="fase" [ngClass]="{ ativa: faseAtual === 4, completa: faseAtual > 4 }">
-        4
+
+      <div style="display: flex; flex-direction: column-reverse;">
+        <div *ngIf="mostrarFase(13)" #fase13 class="fase"
+          [ngClass]="{ ativa: faseAtual === 13, completa: faseAtual > 13 }">
+          13
+        </div>
+
+        <div *ngIf="mostrarFase(14)" #fase14 class="fase"
+          [ngClass]="{ ativa: faseAtual === 14, completa: faseAtual > 14 }">
+          14
+        </div>
       </div>
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(15)" #fase15 class="fase"
+          [ngClass]="{ ativa: faseAtual === 15, completa: faseAtual > 15 }">
+          15
+        </div>
+
+        <div *ngIf="mostrarFase(16)" #fase16 class="fase"
+          [ngClass]="{ ativa: faseAtual === 16, completa: faseAtual > 16 }">
+          16
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column-reverse;">
+        <div *ngIf="mostrarFase(17)" #fase17 class="fase"
+          [ngClass]="{ ativa: faseAtual === 17, completa: faseAtual > 17 }">
+          17
+        </div>
+
+        <div *ngIf="mostrarFase(18)" #fase18 class="fase"
+          [ngClass]="{ ativa: faseAtual === 18, completa: faseAtual > 18 }">
+          18
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(19)" #fase19 class="fase"
+          [ngClass]="{ ativa: faseAtual === 19, completa: faseAtual > 19 }">
+          19
+        </div>
+
+        <div *ngIf="mostrarFase(20)" #fase20 class="fase"
+          [ngClass]="{ ativa: faseAtual === 20, completa: faseAtual > 20 }">
+          20
+        </div>
+      </div>
+
+      <div>
+        <div class="fase" style="visibility: hidden;"></div>
+      </div>
+
     </div>
 
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(5)" #fase5 class="fase" [ngClass]="{ ativa: faseAtual === 5, completa: faseAtual > 5 }">
-        5
+    <div class="linha" *ngIf="mostrarBloco(3)">
+      <div>
+        <div class="fase" style="visibility: hidden;"></div>
       </div>
-      <div *ngIf="mostrarFase(6)" #fase6 class="fase" [ngClass]="{ ativa: faseAtual === 6, completa: faseAtual > 6 }">
-        6
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(21)" #fase21 class="fase"
+          [ngClass]="{ ativa: faseAtual === 21, completa: faseAtual > 21 }">
+          21
+        </div>
+        <div *ngIf="mostrarFase(22)" #fase22 class="fase"
+          [ngClass]="{ ativa: faseAtual === 22, completa: faseAtual > 22 }">
+          22
+        </div>
       </div>
+
+      <div style="display: flex; flex-direction: column-reverse;">
+        <div *ngIf="mostrarFase(23)" #fase23 class="fase"
+          [ngClass]="{ ativa: faseAtual === 23, completa: faseAtual > 23 }">
+          23
+        </div>
+        <div *ngIf="mostrarFase(24)" #fase24 class="fase"
+          [ngClass]="{ ativa: faseAtual === 24, completa: faseAtual > 24 }">
+          24
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(25)" #fase25 class="fase"
+          [ngClass]="{ ativa: faseAtual === 25, completa: faseAtual > 25 }">
+          25
+        </div>
+        <div *ngIf="mostrarFase(26)" #fase26 class="fase"
+          [ngClass]="{ ativa: faseAtual === 26, completa: faseAtual > 26 }">
+          26
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column-reverse;">
+        <div *ngIf="mostrarFase(27)" #fase27 class="fase"
+          [ngClass]="{ ativa: faseAtual === 27, completa: faseAtual > 27 }">
+          27
+        </div>
+        <div *ngIf="mostrarFase(28)" #fase28 class="fase"
+          [ngClass]="{ ativa: faseAtual === 28, completa: faseAtual > 28 }">
+          28
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column;">
+        <div *ngIf="mostrarFase(29)" #fase29 class="fase"
+          [ngClass]="{ ativa: faseAtual === 29, completa: faseAtual > 29 }">
+          29
+        </div>
+        <div *ngIf="mostrarFase(30)" #fase30 class="fase"
+          [ngClass]="{ ativa: faseAtual === 30, completa: faseAtual > 30 }">
+          30
+        </div>
+      </div>
+
     </div>
 
-    <div style="display: flex; flex-direction: column-reverse;">
-      <div *ngIf="mostrarFase(7)" #fase7 class="fase" [ngClass]="{ ativa: faseAtual === 7, completa: faseAtual > 7 }">
-        7
-      </div>
-      <div *ngIf="mostrarFase(8)" #fase8 class="fase" [ngClass]="{ ativa: faseAtual === 8, completa: faseAtual > 8 }">
-        8
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(9)" #fase9 class="fase" [ngClass]="{ ativa: faseAtual === 9, completa: faseAtual > 9 }">
-        9
-      </div>
-      <div *ngIf="mostrarFase(10)" #fase10 class="fase"
-        [ngClass]="{ ativa: faseAtual === 10, completa: faseAtual > 10 }">
-        10
-      </div>
-    </div>
+    <!-- Boneco fixo com animação -->
+    <div class="jogadora" [ngStyle]="playerStyle"></div>
   </div>
-
-  <div class="linha" style="flex-direction: row-reverse;" *ngIf="mostrarBloco(2)">
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(11)" #fase11 class="fase"
-        [ngClass]="{ ativa: faseAtual === 11, completa: faseAtual > 11 }">
-        11
-      </div>
-
-      <div *ngIf="mostrarFase(12)" #fase12 class="fase"
-        [ngClass]="{ ativa: faseAtual === 12, completa: faseAtual > 12 }">
-        12
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column-reverse;">
-      <div *ngIf="mostrarFase(13)" #fase13 class="fase"
-        [ngClass]="{ ativa: faseAtual === 13, completa: faseAtual > 13 }">
-        13
-      </div>
-
-      <div *ngIf="mostrarFase(14)" #fase14 class="fase"
-        [ngClass]="{ ativa: faseAtual === 14, completa: faseAtual > 14 }">
-        14
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(15)" #fase15 class="fase"
-        [ngClass]="{ ativa: faseAtual === 15, completa: faseAtual > 15 }">
-        15
-      </div>
-
-      <div *ngIf="mostrarFase(16)" #fase16 class="fase"
-        [ngClass]="{ ativa: faseAtual === 16, completa: faseAtual > 16 }">
-        16
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column-reverse;">
-      <div *ngIf="mostrarFase(17)" #fase17 class="fase"
-        [ngClass]="{ ativa: faseAtual === 17, completa: faseAtual > 17 }">
-        17
-      </div>
-
-      <div *ngIf="mostrarFase(18)" #fase18 class="fase"
-        [ngClass]="{ ativa: faseAtual === 18, completa: faseAtual > 18 }">
-        18
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(19)" #fase19 class="fase"
-        [ngClass]="{ ativa: faseAtual === 19, completa: faseAtual > 19 }">
-        19
-      </div>
-
-      <div *ngIf="mostrarFase(20)" #fase20 class="fase"
-        [ngClass]="{ ativa: faseAtual === 20, completa: faseAtual > 20 }">
-        20
-      </div>
-    </div>
-
-    <div>
-      <div class="fase" style="visibility: hidden;"></div>
-    </div>
-
-  </div>
-
-  <div class="linha" *ngIf="mostrarBloco(3)">
-    <div>
-      <div class="fase" style="visibility: hidden;"></div>
-    </div>
-
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(21)" #fase21 class="fase"
-        [ngClass]="{ ativa: faseAtual === 21, completa: faseAtual > 21 }">
-        21
-      </div>
-      <div *ngIf="mostrarFase(22)" #fase22 class="fase"
-        [ngClass]="{ ativa: faseAtual === 22, completa: faseAtual > 22 }">
-        22
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column-reverse;">
-      <div *ngIf="mostrarFase(23)" #fase23 class="fase"
-        [ngClass]="{ ativa: faseAtual === 23, completa: faseAtual > 23 }">
-        23
-      </div>
-      <div *ngIf="mostrarFase(24)" #fase24 class="fase"
-        [ngClass]="{ ativa: faseAtual === 24, completa: faseAtual > 24 }">
-        24
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(25)" #fase25 class="fase"
-        [ngClass]="{ ativa: faseAtual === 25, completa: faseAtual > 25 }">
-        25
-      </div>
-      <div *ngIf="mostrarFase(26)" #fase26 class="fase"
-        [ngClass]="{ ativa: faseAtual === 26, completa: faseAtual > 26 }">
-        26
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column-reverse;">
-      <div *ngIf="mostrarFase(27)" #fase27 class="fase"
-        [ngClass]="{ ativa: faseAtual === 27, completa: faseAtual > 27 }">
-        27
-      </div>
-      <div *ngIf="mostrarFase(28)" #fase28 class="fase"
-        [ngClass]="{ ativa: faseAtual === 28, completa: faseAtual > 28 }">
-        28
-      </div>
-    </div>
-
-    <div style="display: flex; flex-direction: column;">
-      <div *ngIf="mostrarFase(29)" #fase29 class="fase"
-        [ngClass]="{ ativa: faseAtual === 29, completa: faseAtual > 29 }">
-        29
-      </div>
-      <div *ngIf="mostrarFase(30)" #fase30 class="fase"
-        [ngClass]="{ ativa: faseAtual === 30, completa: faseAtual > 30 }">
-        30
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Boneco fixo com animação -->
-  <div class="jogadora" [ngStyle]="playerStyle"></div>
 </div>

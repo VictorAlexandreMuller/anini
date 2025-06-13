@@ -9,13 +9,13 @@
 .menu-superior {
   display: flex;
   justify-content: space-around;
-  gap: 12px;
   width: 100%;
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 14px;
+  padding: 0px 10px;
 
   button {
-    width: 50%;
+    width: 45%;
     background: #333;
     color: white;
     border: none;
@@ -76,8 +76,8 @@
   font-family: 'Prompt';
   color: white;
   width: 95%;
-  height: 200px;
-  background: linear-gradient(180deg, #072045, #a4aae0);
+  height: 250px;
+  background: linear-gradient(180deg, #10073a, #5e6190);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,6 @@
 }
 
 .inputCodigoTesouro{
-  font-family: 'Prompt';
   text-align: center;
   border-radius: 20px;
 }
@@ -107,16 +106,15 @@
 }
 
 .btn-fase {
-  font-family: "Prompt", cursive;
   padding: 10px 16px;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: white;
-  background: linear-gradient(135deg, #f12711, #f5af19);
+  background: linear-gradient(135deg, #1f4037, #2c7a56);
   border: none;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px white;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s ease;
   height: 40px;
@@ -142,8 +140,59 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  cursor: pointer;
   position: absolute;
   bottom: 2%;
   left: 2%;
-  background: linear-gradient(135deg, #1f4037, #99f2c8); // verde escuro → claro
+  background: linear-gradient(135deg, #1f4037, #2c7a56);
+  box-shadow: 0px 0px 10px white;
+}
+
+.PASSE-LIVRE {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  background: linear-gradient(135deg, #1f4037, #2c7a56);
+  box-shadow: 0px 0px 10px white;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.modal-conteudo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff8f8;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-size: 18px;
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
 }
