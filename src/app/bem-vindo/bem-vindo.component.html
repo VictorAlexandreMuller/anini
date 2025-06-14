@@ -1,13 +1,12 @@
 <div class="modal-overlay">
-  
   <div class="modal-conteudo" (click)="$event.stopPropagation()">
     <div
-    class="imagemVitinho"
-    [ngStyle]="{
-      'background-image':
-        'url(assets/Vitinho/' + slides[currentSlide].imagem + ')'
-    }"
-  ></div>
+      class="imagemVitinho"
+      [ngStyle]="{
+        'background-image':
+          'url(assets/Vitinho/' + slides[currentSlide].imagem + ')'
+      }"
+    ></div>
     <h2 class="modal-titulo mb-3">.</h2>
     <div
       class="carousel-container d-flex align-items-center justify-content-center"
@@ -29,14 +28,6 @@
         class="btn-seta"
       >
         ◀
-      </button>
-
-      <button
-        class="btn-entendi"
-        *ngIf="currentSlide === slides.length - 1"
-        (click)="fechar.emit()"
-      >
-        Vamos!
       </button>
 
       <button
