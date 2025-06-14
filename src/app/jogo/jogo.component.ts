@@ -41,7 +41,7 @@ export class JogoComponent implements AfterViewInit {
   }
 
   dicas: string[] = [
-    'Esse é o início do jogo', // Fase 0
+    'kkkkkkkkkkkkkkkkkkkk', // Fase 0
     'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
     'Continue assim!', // Fase 2
     'Já está indo longe, hein?', // Fase 3
@@ -285,5 +285,12 @@ export class JogoComponent implements AfterViewInit {
   cancelarConfirmacaoInicio() {
     this.mostrarConfirmacaoInicio = false;
     clearInterval(this.intervaloConfirmacao);
+  }
+
+  iniciarJogo(): void {
+    this.mapaComponent.avançarFase(); // Avança da fase 0 para a 1
+    this.atualizarPartesDica(); // Atualiza a dica da nova fase
+    this.codigoDigitado = ''; // Limpa qualquer código digitado
+    this.codigoValido = false;
   }
 }
