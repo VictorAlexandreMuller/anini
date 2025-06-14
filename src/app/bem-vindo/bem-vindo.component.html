@@ -16,8 +16,14 @@
         *ngFor="let item of slides; let i = index"
         [class.active]="i === currentSlide"
       >
-        <div class="card-carousel" [innerHTML]="item.texto">
-          {{ item.texto }}
+        <div
+          class="card-carousel"
+          *ngIf="!item.ehBotaoFinal"
+          [innerHTML]="item.texto"
+        ></div>
+
+        <div *ngIf="item.ehBotaoFinal">
+          <button class="btn-entendi" (click)="fechar.emit()">Vamos lá!</button>
         </div>
       </div>
     </div>

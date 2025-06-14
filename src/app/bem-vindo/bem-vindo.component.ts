@@ -44,7 +44,7 @@ export class BemVindoComponent {
     { texto: '<i>(Barulhos duvidosos)</i>', imagem: 'vitinhoTimido.png' },
     { texto: '<i>(O Radar liga)</i>', imagem: 'radar.png' },
     { texto: 'Encontrei um tesouro que está bem próximo.', imagem: 'vitinhoExplicando.png' },
-    { texto: '<button class="btn-entendi" id="btn-vamos-larinha">Vamos lá!</button>', imagem: 'vitinhoSagaz.png' },
+    { texto: 'Vamos lá!', imagem: 'vitinhoSagaz.png', ehBotaoFinal: true },
   ];
 
   ngAfterViewInit() {
@@ -53,16 +53,16 @@ export class BemVindoComponent {
   }
 
   ngAfterViewChecked() {
-    // Toda vez que o slide mudar, reanexa o evento se estiver no último
-    this.adicionarEventoAoBotao();
+    if (this.currentSlide === this.slides.length - 1) {
+      setTimeout(() => this.adicionarEventoAoBotao(), 0);
+    }
   }
 
   adicionarEventoAoBotao() {
-    if (this.currentSlide === this.slides.length - 1) {
-      const botao = document.getElementById('btn-vamos-larinha');
-      if (botao) {
-        botao.onclick = () => this.fechar.emit();
-      }
+    const botao = document.getElementById('btn-vamos-larinha');
+    if (botao && !botao.getAttribute('data-click-adicionado')) {
+      botao.onclick = () => this.fechar.emit();
+      botao.setAttribute('data-click-adicionado', 'true');
     }
   }
 
