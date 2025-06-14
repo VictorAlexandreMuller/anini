@@ -242,7 +242,7 @@ intervaloConfirmacao: any;
   atualizarPartesFraseParabens(): void {
     const faseAtual = this.mapaComponent?.faseAtual + 1 || 0;
     const fraseCompleta = this.frasesParabens[faseAtual] || 'Parabéns!';
-    const tamanhoMaximo = 550;
+    const tamanhoMaximo = 480;
 
     this.partesFraseParabensAtual =
       fraseCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];

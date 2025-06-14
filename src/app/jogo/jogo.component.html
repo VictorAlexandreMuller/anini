@@ -86,7 +86,9 @@
       <div class="divMaiorDicas mb-3">
         <!-- INICIO DIV DICAS -->
         <div class="divDicasEsetinhas" *ngIf="mapaComponent">
+          <div style="height: 150px;">
           {{ partesDicaAtual[indiceParteAtual] }}
+          </div>
 
           <div class="navegacao-dica" *ngIf="partesDicaAtual.length > 1">
             <!-- AVANÇAR DICA 1/3 -->
