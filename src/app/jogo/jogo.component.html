@@ -42,7 +42,7 @@
   <!-- FIM BOTOES SUPERIORES DIREITA -->
 
   <!-- INICIO JOGO, CARD DICAS + MAPA -->
-  <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
+  <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes || mostrarBemVindo">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
       <div class="imagemLaura"></div>
       <!-- FASE 0: Mostrar apenas o botão centralizado -->
