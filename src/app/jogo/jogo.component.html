@@ -44,7 +44,7 @@
   <!-- INICIO JOGO, CARD DICAS + MAPA -->
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes || mostrarBemVindo">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
-      <div class="imagemLaura"></div>
+      <div class="imagemLaura" *ngIf="mostrarImagemLaura"></div>
       <!-- FASE 0: Mostrar apenas o botão centralizado -->
       <div
         *ngIf="faseAtual === 0"
