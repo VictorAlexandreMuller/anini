@@ -1,7 +1,7 @@
 <div class="plano-de-fundo">
   <div class="fade-tela" *ngIf="mostrarFade"></div>
 
-  <app-bem-vindo
+  <!-- <app-bem-vindo
     *ngIf="mostrarBemVindo"
     (fechar)="exibirInstrucoes()"
   ></app-bem-vindo>
@@ -9,7 +9,7 @@
   <app-instrucoes
     *ngIf="mostrarInstrucoes"
     (fechar)="fecharInstrucoes()"
-  ></app-instrucoes>
+  ></app-instrucoes> -->
 
   <!-- INICIO MODAL PARABENS POR COMPLETAR A FASE -->
   <ng-template #modalParabens let-modal>
@@ -79,6 +79,7 @@
   <!-- INICIO JOGO, CARD DICAS + MAPA -->
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
+      <div class="imagemLaura"></div>
       <!-- FASE 0: Mostrar apenas o botão centralizado -->
       <div
         *ngIf="faseAtual === 0"

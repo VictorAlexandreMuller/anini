@@ -42,36 +42,36 @@ export class JogoComponent implements AfterViewInit {
   }
 
   dicas: string[] = [
-    'Ficamos sabendo que existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 0
-    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
-    'Continue assim!', // Fase 2
-    'Já está indo longe, hein?', // Fase 3
-    'Não desista agora!', // Fase 4
-    'Você está arrasando!', // Fase 5
-    'Cada vez mais perto!', // Fase 6
-    'Você é demais!', // Fase 7
-    'Mais uma etapa vencida!', // Fase 8
-    'Você está fazendo isso com perfeição!', // Fase 9
-    'Metade do caminho quase lá!', // Fase 10
-    'Continue focada!', // Fase 11
-    'Você é inteligente!', // Fase 12
-    'Uau! Olha você passando tudo!', // Fase 13
-    'Te amo, continue procurando', // Fase 14
-    'Falta pouco para o fim!', // Fase 15
-    'Isso está ficando emocionante!', // Fase 16
-    'Você merece cada surpresa!', // Fase 17
-    'Confio em você!', // Fase 18
-    'Lá vem mais uma dica especial...', // Fase 19
-    'Você já está na reta final!', // Fase 20
-    'Fase 21: continue firme!', // Fase 21
-    'Fase 22: será que está no armário?', // Fase 22
-    'Fase 23: está ficando quente!', // Fase 23
-    'Fase 24: respire fundo e vá!', // Fase 24
-    'Fase 25: quaaaase lá!', // Fase 25
-    'Fase 26: você está brilhando!', // Fase 26
-    'Fase 27: não se canse agora!', // Fase 27
-    'Fase 28: prepare-se para a reta final!', // Fase 28
-    'Fase 29: penúltima fase, você consegue!', // Fase 29
+    '', // Fase 0
+    'Ficamos sabendo que existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 1
+    'De acordo com o nosso radar, identificamos que o próximo tesouro também está por perto, neste mesmo ambiente, mas vemos que, dessa vez, existem muitos itens compridos junto com ele, onde será que ele está?', // Fase 2
+    'Continue assim!', // Fase 3
+    'Já está indo longe, hein?', // Fase 4
+    'Não desista agora!', // Fase 5
+    'Você está arrasando!', // Fase 6
+    'Cada vez mais perto!', // Fase 7
+    'Você é demais!', // Fase 8
+    'Mais uma etapa vencida!', // Fase 9
+    'Você está fazendo isso com perfeição!', // Fase 10
+    'Metade do caminho quase lá!', // Fase 11
+    'Continue focada!', // Fase 12
+    'Você é inteligente!', // Fase 13
+    'Uau! Olha você passando tudo!', // Fase 14
+    'Te amo, continue procurando', // Fase 15
+    'Falta pouco para o fim!', // Fase 16
+    'Isso está ficando emocionante!', // Fase 17
+    'Você merece cada surpresa!', // Fase 18
+    'Confio em você!', // Fase 19
+    'Lá vem mais uma dica especial...', // Fase 20
+    'Você já está na reta final!', // Fase 21
+    'Fase 22: continue firme!', // Fase 22
+    'Fase 23: será que está no armário?', // Fase 23
+    'Fase 24: está ficando quente!', // Fase 24
+    'Fase 25: respire fundo e vá!', // Fase 25
+    'Fase 26: quaaaase lá!', // Fase 26
+    'Fase 27: você está brilhando!', // Fase 27
+    'Fase 28: não se canse agora!', // Fase 28
+    'Fase 29: prepare-se para a reta final!', // Fase 29
     'Fase 30: Parabéns! Você chegou ao final 🎉❤️', // Fase 30
   ];
 
