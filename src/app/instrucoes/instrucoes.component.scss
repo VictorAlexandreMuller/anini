@@ -5,20 +5,23 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1000;
-  font-family: 'Prompt';
+  font-family: "Prompt";
+  padding-top: 30px;
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
 }
 
 .modal-conteudo {
-  background: white;
+  background: #333;
   padding: 24px;
   border-radius: 12px;
   width: 300px;
   text-align: center;
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  box-shadow: 0 0 12px wheat;
+  animation: slideUp 2s ease forwards;
 
   button {
     background: #28a745;
@@ -29,6 +32,10 @@
     cursor: pointer;
     font-weight: 500;
   }
+}
+
+.modal-titulo {
+  color: white;
 }
 
 .carousel-container {
@@ -50,9 +57,10 @@
 
 .card-carousel {
   padding: 2rem;
-  background: #f0f0f0;
+  background: #656565;
   border-radius: 12px;
   font-size: 1.2rem;
+  color: white;
 }
 
 .carousel-controles {
@@ -79,4 +87,15 @@
   background-color: #cccccc;
   cursor: not-allowed;
   opacity: 0.3;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -31,6 +31,10 @@ export class JogoComponent implements AfterViewInit {
   partesDicaAtual: string[] = [];
   partesFraseParabensAtual: string[] = [];
   indiceParteParabensAtual = 0;
+  mostrarConfirmacaoInicio = false;
+contadorConfirmacao = 3;
+botaoConfirmarHabilitado = false;
+intervaloConfirmacao: any;
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
@@ -259,4 +263,27 @@ export class JogoComponent implements AfterViewInit {
       this.indiceParteParabensAtual--;
     }
   }
+
+  abrirConfirmacaoInicio() {
+  this.mostrarConfirmacaoInicio = true;
+  this.contadorConfirmacao = 3;
+  this.botaoConfirmarHabilitado = false;
+
+  this.intervaloConfirmacao = setInterval(() => {
+    this.contadorConfirmacao--;
+    if (this.contadorConfirmacao <= 0) {
+      clearInterval(this.intervaloConfirmacao);
+      this.botaoConfirmarHabilitado = true;
+    }
+  }, 1000);
+}
+
+confirmarIrParaInicio() {
+  window.location.href = '/';
+}
+
+cancelarConfirmacaoInicio() {
+  this.mostrarConfirmacaoInicio = false;
+  clearInterval(this.intervaloConfirmacao);
+}
 }

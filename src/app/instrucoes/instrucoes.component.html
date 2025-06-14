@@ -31,6 +31,12 @@
       </button>
     </div>
 
-    <button class="btn-fechar" (click)="fechar.emit()">Entendi</button>
+    <button
+      class="btn-fechar"
+      *ngIf="currentSlide === slides.length - 1"
+      (click)="fechar.emit()"
+    >
+      Entendi
+    </button>
   </div>
 </div>

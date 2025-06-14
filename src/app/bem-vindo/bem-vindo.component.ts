@@ -13,15 +13,15 @@ images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   @Output() fechar = new EventEmitter<void>();
 
   slides = [
-    'Bem-Vinda ao Castelo dos Tesouros! Eu sou o Vitinho.',
-    'Estávamos ansiosos pela sua chegada.',
-    'Ficamos sabendo que você é uma aventureira muito renomada e conhecida, Srta. Laura.',
-    'Fique sabendo que essas são terras totalmente inexplorádas, então elas estão repletas de aventuras e tesouros escondidos.',
-    'Eu estou com um Radar que comprei nos achadinhos da Shopee com a esperança de nos ajudar com o reconhecimento desse novo local.',
-    'Só não sei se ele está funcionando, ainda não testei.',
-    'Então me ajude a ficar atento nas pistas desse aparelho duvidoso e espero que se divirta nessa caça ao tesouro junto comigo.',
-    'Como você acabou de chegar, vamos começar por um tesouro próximo que localizei...',
-  ];
+  { texto: 'Bem-Vinda ao Castelo dos Tesouros! Eu sou o Vitinho.', imagem: 'vitinhoSagaz.png' },
+  { texto: 'Estávamos ansiosos pela sua chegada.', imagem: 'vitinhoExplicando.png' },
+  { texto: 'Ficamos sabendo que você é uma aventureira muito renomada e conhecida, Srta. Laura.', imagem: 'vitinhoExplicando.png' },
+  { texto: 'Fique sabendo que essas são terras totalmente inexplorádas, então elas estão repletas de aventuras e tesouros escondidos.', imagem: 'vitinhoSagaz.png' },
+  { texto: 'Eu estou com um Radar que comprei nos achadinhos da Shopee com a esperança de nos ajudar com o reconhecimento desse novo local.', imagem: 'vitinhoExplicando.png' },
+  { texto: 'Só não sei se ele está funcionando, ainda não testei.', imagem: 'vitinhoTimido.png' },
+  { texto: 'Então me ajude a ficar atento nas pistas desse aparelho duvidoso e espero que se divirta nessa caça ao tesouro junto comigo.', imagem: 'vitinhoTimido.png' },
+  { texto: 'Como você acabou de chegar, vamos começar por um tesouro próximo que localizei...', imagem: 'vitinhoSagaz.png' },
+];
   
   currentSlide = 0;
 

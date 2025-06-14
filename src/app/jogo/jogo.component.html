@@ -50,9 +50,32 @@
     <ng-container *ngTemplateOutlet="modalParabens"></ng-container>
   </div>
 
+  <div class="modal-container2" *ngIf="mostrarConfirmacaoInicio">
+    <div class="modal-conteudo2">
+      <p>Você tem certeza de que deseja reiniciar o jogo?</p>
+      <div class="d-flex justify-content-center">
+        <button class="btn-nao" (click)="cancelarConfirmacaoInicio()">
+          Não
+        </button>
+
+        <button
+          class="btn-sim"
+          [disabled]="!botaoConfirmarHabilitado"
+          (click)="confirmarIrParaInicio()"
+        >
+          {{
+            botaoConfirmarHabilitado
+              ? "Sim"
+              : "" + contadorConfirmacao + ""
+          }}
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- INICIO BOTÕES SUPERIORES DIREITA -->
   <div class="menu-superior pt-3 mb-3">
-    <button (click)="irParaInicio()">Voltar à Tela Inicial</button>
+    <button (click)="abrirConfirmacaoInicio()">Reiniciar o Jogo</button>
     <button (click)="abrirModal()">Instruções</button>
   </div>
   <!-- FIM BOTOES SUPERIORES DIREITA -->

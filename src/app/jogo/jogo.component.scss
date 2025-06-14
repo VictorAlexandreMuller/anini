@@ -202,7 +202,7 @@
   border-radius: 12px;
 
   text-align: center;
-  box-shadow: 0 0 10px rgb(203, 196, 91);
+  box-shadow: 0 0 10px wheat;
   font-size: 18px;
   animation: aparecer 0.3s ease;
 
@@ -277,4 +277,59 @@
     opacity: 0.3;
     cursor: default;
   }
+}
+
+.modal-container2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-conteudo2 {
+  color: white;
+  background-color: #333;
+  border-radius: 12px;
+  padding: 24px 16px;
+  width: 280px;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 0px 15px wheat;
+  font-size: 1rem;
+}
+
+.modal-conteudo2 p {
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.modal-conteudo2 button {
+  padding: 6px 16px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-conteudo2 button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-conteudo2 .btn-nao {
+  background-color: #e74c3c; // vermelho
+  margin-right: 10px;
+}
+
+.modal-conteudo2 .btn-sim {
+  background-color: #2ecc71; // verde
 }

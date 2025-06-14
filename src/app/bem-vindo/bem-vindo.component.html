@@ -1,6 +1,13 @@
 <div class="modal-overlay" (click)="fechar.emit()">
-  <div class="imagemVitinho"></div>
+  <div
+    class="imagemVitinho"
+    [ngStyle]="{
+      'background-image':
+        'url(assets/Vitinho/' + slides[currentSlide].imagem + ')'
+    }"
+  ></div>
   <div class="modal-conteudo" (click)="$event.stopPropagation()">
+    <h2 class="modal-titulo mb-3">.</h2>
     <div
       class="carousel-container d-flex align-items-center justify-content-center"
     >
@@ -9,7 +16,9 @@
         *ngFor="let item of slides; let i = index"
         [class.active]="i === currentSlide"
       >
-        <div class="card-carousel" [innerHTML]="item">{{ item }}</div>
+        <div class="card-carousel" [innerHTML]="item.texto">
+          {{ item.texto }}
+        </div>
       </div>
     </div>
     <div class="carousel-controles mb-3">
@@ -30,6 +39,12 @@
       </button>
     </div>
 
-    <button class="btn-fechar" (click)="fechar.emit()">Entendi</button>
+    <button
+      class="btn-fechar"
+      *ngIf="currentSlide === slides.length - 1"
+      (click)="fechar.emit()"
+    >
+      Entendi
+    </button>
   </div>
 </div>
