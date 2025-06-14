@@ -173,11 +173,6 @@
   align-items: end;
   justify-content: center;
   gap: 12px;
-
-  // position: absolute;
-  // bottom: 2%;
-  // left: 50%;
-  // transform: translateX(-50%);
 }
 
 .btn-fase {
@@ -234,7 +229,7 @@
   right: 2%;
   background: linear-gradient(135deg, #1f4037, #2c7a56);
   box-shadow: 0px 0px 10px white;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 .modal-container {
@@ -253,59 +248,129 @@
   position: absolute;
 }
 
-.modal-conteudo {
+// .modal-conteudo1 {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+
+//   background: #2f2f2f;
+//   color: white;
+
+//   padding: 24px;
+//   border-radius: 12px;
+
+//   text-align: center;
+//   box-shadow: 0 0 10px wheat;
+//   font-size: 18px;
+//   animation: aparecer 0.3s ease;
+
+//   width: 600px;
+//   max-width: 90%;
+
+//   p {
+//     height: auto;
+//     word-break: normal; // impede quebrar no meio da palavra
+//     overflow-wrap: normal; // mantém palavras inteiras
+//     white-space: normal; // quebra apenas entre palavras
+//     line-break: auto;
+//   }
+
+//   .navegacao-parabens {
+//     margin-top: 12px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 16px;
+
+//     button {
+//       background: transparent;
+//       border: none;
+//       font-size: 24px;
+//       color: black;
+//       cursor: pointer;
+//     }
+
+//     span {
+//       color: white;
+//       font-size: 14px;
+//       font-family: "Prompt";
+//     }
+
+//     button:disabled {
+//       opacity: 0.3;
+//       cursor: default;
+//     }
+//   }
+// }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  font-family: "Prompt";
+  padding-top: 30px;
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.modal-conteudo1 {
+  background: #333;
+  padding: 24px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 12px wheat;
+  animation: slideUp 2s ease forwards;
+
+  display: flex;
+  flex-direction: column;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
-  background: #2f2f2f;
-  color: white;
+.imagemLaurinhaModal {
+  background-image: url("../../assets/surpresaPeloTesouro.png");
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  z-index: 8888;
+  // border: 2px solid wheat;
+  // box-shadow: 0px 0px 15px wheat;
+  filter: drop-shadow(0px 0px 15px wheat);
+  opacity: 1;
+  width: 160px;
+  height: 160px;
+  pointer-events: none;
 
-  padding: 24px;
-  border-radius: 12px;
+  position: absolute;
+  left: 92%;
+  bottom: -1%;
+  transform: translateX(-50%) scaleX(-1);
+}
 
-  text-align: center;
-  box-shadow: 0 0 10px wheat;
-  font-size: 18px;
-  animation: aparecer 0.3s ease;
-
-  width: 600px;
-  max-width: 90%;
+.organizacaoModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   p {
-    height: auto;
-    word-break: normal; // impede quebrar no meio da palavra
-    overflow-wrap: normal; // mantém palavras inteiras
-    white-space: normal; // quebra apenas entre palavras
-    line-break: auto;
+    color: white;
   }
 
-  .navegacao-parabens {
-    margin-top: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-
-    button {
-      background: transparent;
-      border: none;
-      font-size: 24px;
-      color: black;
-      cursor: pointer;
-    }
-
-    span {
-      color: white;
-      font-size: 14px;
-      font-family: "Prompt";
-    }
-
-    button:disabled {
-      opacity: 0.3;
-      cursor: default;
-    }
+  button {
+    border-radius: 20px;
+    padding: 7px 20px;
   }
 }
 

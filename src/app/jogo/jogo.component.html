@@ -11,41 +11,6 @@
     (fechar)="fecharInstrucoes()"
   ></app-instrucoes> -->
 
-  <!-- INICIO MODAL PARABENS POR COMPLETAR A FASE -->
-  <ng-template #modalParabens let-modal>
-    <div (click)="fecharModalParabens()"></div>
-    <div class="modal-conteudo">
-      <p>{{ partesFraseParabensAtual[indiceParteParabensAtual] }}</p>
-
-      <div
-        class="navegacao-parabens"
-        *ngIf="partesFraseParabensAtual.length > 1"
-      >
-        <button
-          (click)="voltarParteParabens()"
-          [disabled]="indiceParteParabensAtual === 0"
-        >
-          ◀
-        </button>
-
-        <span
-          >{{ indiceParteParabensAtual + 1 }} /
-          {{ partesFraseParabensAtual.length }}</span
-        >
-        <button
-          (click)="avancarParteParabens()"
-          [disabled]="
-            indiceParteParabensAtual === partesFraseParabensAtual.length - 1
-          "
-        >
-          ▶
-        </button>
-      </div>
-      <button (click)="fecharModalParabens()">Fechar</button>
-    </div>
-  </ng-template>
-  <!-- FIM MODAL PARABENS POR COMPLETAR A FASE -->
-
   <div *ngIf="modalAberto" class="modal-container">
     <ng-container *ngTemplateOutlet="modalParabens"></ng-container>
   </div>
@@ -176,3 +141,44 @@
     <!-- FIM DIV MAPA -->
   </div>
 </div>
+
+<!-- INICIO MODAL PARABENS POR COMPLETAR A FASE -->
+<ng-template #modalParabens let-modal>
+  <div class="modal-overlay">
+    <div class="modal-conteudo1" (click)="$event.stopPropagation()">
+      <div class="imagemLaurinhaModal"></div>
+      <div
+        class="carousel-container organizacaoModal"
+      >
+        <p>{{ partesFraseParabensAtual[indiceParteParabensAtual] }}</p>
+
+        <div
+          class="navegacao-parabens"
+          *ngIf="partesFraseParabensAtual.length > 1"
+        >
+          <button
+            (click)="voltarParteParabens()"
+            [disabled]="indiceParteParabensAtual === 0"
+          >
+            ◀
+          </button>
+
+          <span
+            >{{ indiceParteParabensAtual + 1 }} /
+            {{ partesFraseParabensAtual.length }}</span
+          >
+          <button
+            (click)="avancarParteParabens()"
+            [disabled]="
+              indiceParteParabensAtual === partesFraseParabensAtual.length - 1
+            "
+          >
+            ▶
+          </button>
+        </div>
+        <button (click)="fecharModalParabens()">Fechar</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- FIM MODAL PARABENS POR COMPLETAR A FASE -->
