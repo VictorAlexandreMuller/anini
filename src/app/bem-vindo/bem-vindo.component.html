@@ -1,12 +1,13 @@
 <div class="modal-overlay">
-  <div
+  
+  <div class="modal-conteudo" (click)="$event.stopPropagation()">
+    <div
     class="imagemVitinho"
     [ngStyle]="{
       'background-image':
         'url(assets/Vitinho/' + slides[currentSlide].imagem + ')'
     }"
   ></div>
-  <div class="modal-conteudo" (click)="$event.stopPropagation()">
     <h2 class="modal-titulo mb-3">.</h2>
     <div
       class="carousel-container d-flex align-items-center justify-content-center"

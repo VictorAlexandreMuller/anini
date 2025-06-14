@@ -22,6 +22,7 @@
   text-align: center;
   box-shadow: 0 0 12px wheat;
   animation: slideUp 2s ease forwards;
+  position: relative;
 }
 
 .btn-entendi {
@@ -107,11 +108,11 @@
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 25%;
-  bottom: 9%;
+  left: 50%;
+  bottom: -25%;
   z-index: 9999;
   pointer-events: none;
-  transform: scaleX(-1);
+  transform: translateX(-50%) scaleX(-1);
 }
 
 @keyframes slideUp {
