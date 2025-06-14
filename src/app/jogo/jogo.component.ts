@@ -32,9 +32,9 @@ export class JogoComponent implements AfterViewInit {
   partesFraseParabensAtual: string[] = [];
   indiceParteParabensAtual = 0;
   mostrarConfirmacaoInicio = false;
-contadorConfirmacao = 3;
-botaoConfirmarHabilitado = false;
-intervaloConfirmacao: any;
+  contadorConfirmacao = 5;
+  botaoConfirmarHabilitado = false;
+  intervaloConfirmacao: any;
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
@@ -265,25 +265,25 @@ intervaloConfirmacao: any;
   }
 
   abrirConfirmacaoInicio() {
-  this.mostrarConfirmacaoInicio = true;
-  this.contadorConfirmacao = 3;
-  this.botaoConfirmarHabilitado = false;
+    this.mostrarConfirmacaoInicio = true;
+    this.contadorConfirmacao = 5;
+    this.botaoConfirmarHabilitado = false;
 
-  this.intervaloConfirmacao = setInterval(() => {
-    this.contadorConfirmacao--;
-    if (this.contadorConfirmacao <= 0) {
-      clearInterval(this.intervaloConfirmacao);
-      this.botaoConfirmarHabilitado = true;
-    }
-  }, 1000);
-}
+    this.intervaloConfirmacao = setInterval(() => {
+      this.contadorConfirmacao--;
+      if (this.contadorConfirmacao <= 0) {
+        clearInterval(this.intervaloConfirmacao);
+        this.botaoConfirmarHabilitado = true;
+      }
+    }, 1000);
+  }
 
-confirmarIrParaInicio() {
-  window.location.href = '/';
-}
+  confirmarIrParaInicio() {
+    window.location.href = '/';
+  }
 
-cancelarConfirmacaoInicio() {
-  this.mostrarConfirmacaoInicio = false;
-  clearInterval(this.intervaloConfirmacao);
-}
+  cancelarConfirmacaoInicio() {
+    this.mostrarConfirmacaoInicio = false;
+    clearInterval(this.intervaloConfirmacao);
+  }
 }
