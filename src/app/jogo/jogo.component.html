@@ -84,7 +84,7 @@
         *ngIf="faseAtual === 0"
         class="text-center d-flex align-items-center justify-content-center"
       >
-        <button class="btn-fase" (click)="iniciarJogo()">Vamos Começar</button>
+        <button class="btn-fase" (click)="iniciarJogo()">Começar</button>
       </div>
 
       <!-- FASES >= 1: Mostrar dica + input + botões -->
@@ -138,12 +138,24 @@
             ◀
           </button>
 
+          <!-- Botão Próxima fase – aparece apenas da fase 1 até 29 -->
           <button
             class="btn-fase"
+            *ngIf="faseAtual > 0 && faseAtual < 30"
             (click)="mostrarModalParabens()"
-            [disabled]="!codigoValido || faseAtual === 30"
+            [disabled]="!codigoValido"
           >
             ▶ Próxima fase
+          </button>
+
+          <!-- Botão Concluir – apenas na fase 30 -->
+          <button
+            class="btn-fase"
+            *ngIf="faseAtual === 30"
+            (click)="mostrarModalParabens()"
+            [disabled]="!codigoValido"
+          >
+            ✅ Concluir
           </button>
 
           <button

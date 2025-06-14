@@ -13,9 +13,9 @@ export class InstrucoesComponent {
   @Output() fechar = new EventEmitter<void>();
 
   slides = [
-    '🔍 <br> Leia as pistas de cada fase na parte superior da tela.',
+    '🔍 <br> Leia as pistas na parte superior da tela.',
     '💎 <br> Procure pelos tesouros escondidos.',
-    '🔖 <br> Cada tesouro terá um código, utilize deste código para avançar pelas trilhas e conquistar todos os tesouros escondidos.',
+    '🔖 <br> Cada tesouro terá um código. Utilize destes códigos para avançar pelas trilhas e conquistar todos os tesouros escondidos.',
     '🎉 <br> Boa Sorte!',
   ];
   currentSlide = 0;

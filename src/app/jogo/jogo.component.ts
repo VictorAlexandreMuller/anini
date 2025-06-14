@@ -35,13 +35,14 @@ export class JogoComponent implements AfterViewInit {
   contadorConfirmacao = 5;
   botaoConfirmarHabilitado = false;
   intervaloConfirmacao: any;
+  maxCaracteresPorParte: number = 220;
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
   }
 
   dicas: string[] = [
-    'kkkkkkkkkkkkkkkkkkkk', // Fase 0
+    'Ficamos sabendo que existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 0
     'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
     'Continue assim!', // Fase 2
     'Já está indo longe, hein?', // Fase 3
@@ -75,8 +76,8 @@ export class JogoComponent implements AfterViewInit {
   ];
 
   codigosFases: string[] = [
-    '1', // Fase 0 → código para desbloquear a fase 1
-    '2', // Fase 1 → código para desbloquear a fase 2
+    '', // Fase 0 → código para desbloquear a fase 1
+    'RESSACADAIDADE', // Fase 1 → código para desbloquear a fase 2
     '3', // Fase 2
     '4', // Fase 3
     '5', // Fase 4
@@ -105,6 +106,7 @@ export class JogoComponent implements AfterViewInit {
     '28', // Fase 27
     '29', // Fase 28
     '30', // Fase 29 → código para desbloquear a fase 30
+    '31',
     // Fase 30 não tem próxima, então não precisa código
   ];
 
@@ -152,9 +154,24 @@ export class JogoComponent implements AfterViewInit {
 
   atualizarPartesDica(): void {
     const dicaCompleta = this.dicas[this.mapaComponent?.faseAtual || 0] || '';
-    const tamanhoMaximo = 210;
-    this.partesDicaAtual =
-      dicaCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];
+
+    const palavras = dicaCompleta.replace(/\s+/g, ' ').trim().split(' ');
+    const partes: string[] = [];
+    let parteAtual = '';
+
+    for (const palavra of palavras) {
+      const tentativa = parteAtual ? `${parteAtual} ${palavra}` : palavra;
+      if (tentativa.length <= this.maxCaracteresPorParte) {
+        parteAtual = tentativa;
+      } else {
+        if (parteAtual) partes.push(parteAtual);
+        parteAtual = palavra;
+      }
+    }
+
+    if (parteAtual) partes.push(parteAtual);
+
+    this.partesDicaAtual = partes;
     this.indiceParteAtual = 0;
   }
 
@@ -228,7 +245,11 @@ export class JogoComponent implements AfterViewInit {
 
   fecharModalParabens() {
     this.modalAberto = false;
-    this.mapaComponent.avançarFase();
+
+    if (this.faseAtual < 30) {
+      this.mapaComponent.avançarFase();
+    }
+
     this.atualizarPartesDica();
     this.codigoDigitado = '';
     this.codigoValido = false;
@@ -242,10 +263,24 @@ export class JogoComponent implements AfterViewInit {
   atualizarPartesFraseParabens(): void {
     const faseAtual = this.mapaComponent?.faseAtual + 1 || 0;
     const fraseCompleta = this.frasesParabens[faseAtual] || 'Parabéns!';
-    const tamanhoMaximo = 480;
 
-    this.partesFraseParabensAtual =
-      fraseCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];
+    const palavras = fraseCompleta.replace(/\s+/g, ' ').trim().split(' ');
+    const partes: string[] = [];
+    let parteAtual = '';
+
+    for (const palavra of palavras) {
+      const tentativa = parteAtual ? `${parteAtual} ${palavra}` : palavra;
+      if (tentativa.length <= this.maxCaracteresPorParte) {
+        parteAtual = tentativa;
+      } else {
+        if (parteAtual) partes.push(parteAtual);
+        parteAtual = palavra;
+      }
+    }
+
+    if (parteAtual) partes.push(parteAtual);
+
+    this.partesFraseParabensAtual = partes;
     this.indiceParteParabensAtual = 0;
   }
 
