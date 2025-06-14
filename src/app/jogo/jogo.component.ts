@@ -152,7 +152,7 @@ export class JogoComponent implements AfterViewInit {
 
   atualizarPartesDica(): void {
     const dicaCompleta = this.dicas[this.mapaComponent?.faseAtual || 0] || '';
-    const tamanhoMaximo = 200;
+    const tamanhoMaximo = 210;
     this.partesDicaAtual =
       dicaCompleta.match(new RegExp(`.{1,${tamanhoMaximo}}`, 'g')) || [];
     this.indiceParteAtual = 0;

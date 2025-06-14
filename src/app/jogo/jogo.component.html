@@ -79,74 +79,82 @@
   <!-- INICIO JOGO, CARD DICAS + MAPA -->
   <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
+      <!-- FASE 0: Mostrar apenas o botão centralizado -->
+      <div
+        *ngIf="faseAtual === 0"
+        class="text-center d-flex align-items-center justify-content-center"
+      >
+        <button class="btn-fase" (click)="iniciarJogo()">Vamos Começar</button>
+      </div>
 
-  <!-- FASE 0: Mostrar apenas o botão centralizado -->
-  <div *ngIf="faseAtual === 0" class="text-center d-flex align-items-center justify-content-center" style="height: 150px;">
-    <button class="btn-fase" (click)="iniciarJogo()">Vamos Começar</button>
-  </div>
+      <!-- FASES >= 1: Mostrar dica + input + botões -->
+      <ng-container *ngIf="faseAtual > 0">
+        <div class="divMaiorDicas mb-3">
+          <!-- DIV DICAS -->
+          <div class="divDicasEsetinhas">
+            <div class="texto-dica">
+              {{ partesDicaAtual[indiceParteAtual] }}
+            </div>
 
-  <!-- FASES >= 1: Mostrar dica + input + botões -->
-  <ng-container *ngIf="faseAtual > 0">
-    <div class="divMaiorDicas mb-3">
-      <!-- DIV DICAS -->
-      <div class="divDicasEsetinhas">
-        <div style="height: 150px">
-          {{ partesDicaAtual[indiceParteAtual] }}
+            <div
+              class="navegacao-dica"
+              [class.invisivel]="partesDicaAtual.length <= 1"
+            >
+              <button
+                (click)="voltarParteDica()"
+                [disabled]="indiceParteAtual === 0"
+              >
+                ◀
+              </button>
+              <span
+                >{{ indiceParteAtual + 1 }} / {{ partesDicaAtual.length }}</span
+              >
+              <button
+                (click)="avancarParteDica()"
+                [disabled]="indiceParteAtual === partesDicaAtual.length - 1"
+              >
+                ▶
+              </button>
+            </div>
+
+            <div class="input-dica">
+              <input
+                class="inputCodigoTesouro"
+                type="text"
+                (input)="verificarCodigo($event)"
+                [value]="codigoDigitado"
+              />
+            </div>
+          </div>
         </div>
 
-        <div class="navegacao-dica" *ngIf="partesDicaAtual.length > 1">
+        <!-- BOTÕES INFERIORES -->
+        <div class="container-botoes" *ngIf="carregado">
           <button
-            (click)="voltarParteDica()"
-            [disabled]="indiceParteAtual === 0"
+            class="btn-fase voltar"
+            (click)="voltarFase()"
+            [disabled]="faseAtual === 0"
           >
             ◀
           </button>
-          <span>{{ indiceParteAtual + 1 }} / {{ partesDicaAtual.length }}</span>
+
           <button
-            (click)="avancarParteDica()"
-            [disabled]="indiceParteAtual === partesDicaAtual.length - 1"
+            class="btn-fase"
+            (click)="mostrarModalParabens()"
+            [disabled]="!codigoValido || faseAtual === 30"
+          >
+            ▶ Próxima fase
+          </button>
+
+          <button
+            class="btn-fase avancar PASSE-LIVRE"
+            (click)="mostrarModalParabens()"
           >
             ▶
           </button>
         </div>
-      </div>
-
-      <!-- INPUT CÓDIGO -->
-      <input
-        class="inputCodigoTesouro"
-        type="text"
-        (input)="verificarCodigo($event)"
-        [value]="codigoDigitado"
-      />
+      </ng-container>
     </div>
-
-    <!-- BOTÕES INFERIORES -->
-    <div class="container-botoes" *ngIf="carregado">
-      <button
-        class="btn-fase voltar"
-        (click)="voltarFase()"
-        [disabled]="faseAtual === 0"
-      >
-        ◀
-      </button>
-
-      <button
-        class="btn-fase"
-        (click)="mostrarModalParabens()"
-        [disabled]="!codigoValido || faseAtual === 30"
-      >
-        ▶ Próxima fase
-      </button>
-
-      <button
-        class="btn-fase avancar PASSE-LIVRE"
-        (click)="mostrarModalParabens()"
-      >
-        ▶
-      </button>
-    </div>
-  </ng-container>
-</div>
 
     <!-- DIV MAPA -->
     <div class="divMapa">
