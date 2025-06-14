@@ -45,9 +45,9 @@ export class JogoComponent implements AfterViewInit {
     '', // Fase 0
     'Ficamos sabendo que existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 1
     'De acordo com o nosso radar, identificamos que o próximo tesouro também está por perto, neste mesmo ambiente, mas vemos que, dessa vez, existem muitos itens compridos junto com ele, onde será que ele está?', // Fase 2
-    'Continue assim!', // Fase 3
-    'Já está indo longe, hein?', // Fase 4
-    'Não desista agora!', // Fase 5
+    'Então aqui vai o primeiro enigma: "Daqui a pouco está quase na hora de dormir, será que precisaremos nos vestir adequadamente para sonharmos?', // Fase 3
+    'De acordo com o Radar da Shopee, o próximo tesouro também parece estar próximo, então lá vai o próximo enigma: "Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou eu quem atendo ao seu chamado engolindo tudo para dentro.', // Fase 4
+    'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: "Eu sou dual color, Preto e Branco me definem. Se eu não fosse um jogo, poderia ser facilmente confundido com uma Zebra.', // Fase 5
     'Você está arrasando!', // Fase 6
     'Cada vez mais perto!', // Fase 7
     'Você é demais!', // Fase 8
@@ -76,72 +76,71 @@ export class JogoComponent implements AfterViewInit {
   ];
 
   codigosFases: string[] = [
-    '', // Fase 0 → código para desbloquear a fase 1
-    'RESSACADAIDADE', // Fase 1 → código para desbloquear a fase 2
-    '3', // Fase 2
-    '4', // Fase 3
-    '5', // Fase 4
-    '6', // Fase 5
-    '7', // Fase 6
-    '8', // Fase 7
-    '9', // Fase 8
-    '10', // Fase 9
-    '11', // Fase 10
-    '12', // Fase 11
-    '13', // Fase 12
-    '14', // Fase 13
-    '15', // Fase 14
-    '16', // Fase 15
-    '17', // Fase 16
-    '18', // Fase 17
-    '19', // Fase 18
-    '20', // Fase 19
-    '21', // Fase 20
-    '22', // Fase 21
-    '23', // Fase 22
-    '24', // Fase 23
-    '25', // Fase 24
-    '26', // Fase 25
-    '27', // Fase 26
-    '28', // Fase 27
-    '29', // Fase 28
-    '30', // Fase 29 → código para desbloquear a fase 30
-    '31',
-    // Fase 30 não tem próxima, então não precisa código
+    '',   // Código da Fase 0 → desbloqueia a Fase 1
+    '1',  // Código da Fase 1 → desbloqueia a Fase 2
+    '2',  // Código da Fase 2 → desbloqueia a Fase 3
+    '3',  // Código da Fase 3 → desbloqueia a Fase 4
+    '4',  // Código da Fase 4 → desbloqueia a Fase 5
+    '5',  // Código da Fase 5 → desbloqueia a Fase 6
+    '6',  // Código da Fase 6 → desbloqueia a Fase 7
+    '7',  // Código da Fase 7 → desbloqueia a Fase 8
+    '8',  // Código da Fase 8 → desbloqueia a Fase 9
+    '9', // Código da Fase 9 → desbloqueia a Fase 10
+    '10', // Código da Fase 10 → desbloqueia a Fase 11
+    '11', // Código da Fase 11 → desbloqueia a Fase 12
+    '12', // Código da Fase 12 → desbloqueia a Fase 13
+    '13', // Código da Fase 13 → desbloqueia a Fase 14
+    '14', // Código da Fase 14 → desbloqueia a Fase 15
+    '15', // Código da Fase 15 → desbloqueia a Fase 16
+    '16', // Código da Fase 16 → desbloqueia a Fase 17
+    '17', // Código da Fase 17 → desbloqueia a Fase 18
+    '18', // Código da Fase 18 → desbloqueia a Fase 19
+    '19', // Código da Fase 19 → desbloqueia a Fase 20
+    '20', // Código da Fase 20 → desbloqueia a Fase 21
+    '21', // Código da Fase 21 → desbloqueia a Fase 22
+    '22', // Código da Fase 22 → desbloqueia a Fase 23
+    '23', // Código da Fase 23 → desbloqueia a Fase 24
+    '24', // Código da Fase 24 → desbloqueia a Fase 25
+    '25', // Código da Fase 25 → desbloqueia a Fase 26
+    '26', // Código da Fase 26 → desbloqueia a Fase 27
+    '27', // Código da Fase 27 → desbloqueia a Fase 28
+    '28', // Código da Fase 28 → desbloqueia a Fase 29
+    '29', // Código da Fase 29 → desbloqueia a Fase 30
+    '30', // Código da Fase 30 → desbloqueia a mensagem final de Parabéns
   ];
 
   frasesParabens: string[] = [
-    '', // Fase 0 não tem
-    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Fase 1
-    'Parabéns, você está conseguindo, continue!', // Fase 2
-    'Mais um presente achado com sucesso!', // Fase 3
-    'Você é incrível, olha só esse avanço!', // Fase 4
-    'Eu sabia que você ia acertar!', // Fase 5
-    'Seu progresso me enche de alegria!', // Fase 6
-    'Você está arrasando demais!', // Fase 7
-    'Isso aqui está ficando emocionante!', // Fase 8
-    'Parabéns! Mais uma etapa vencida!', // Fase 9
-    'Uau, você chegou até aqui, que orgulho!', // Fase 10
-    'Você é uma campeã!', // Fase 11
-    'Continue assim, você está indo muito bem!', // Fase 12
-    'Você é brilhante! Continue!', // Fase 13
-    'Que fofa você procurando tudo direitinho!', // Fase 14
-    'Tá chegando no fim, hein!', // Fase 15
-    'Você merece todos esses momentos!', // Fase 16
-    'Cada presente é um pedacinho do meu amor!', // Fase 17
-    'Você é maravilhosa!', // Fase 18
-    'Quase lá! Faltam pouquinhos!', // Fase 19
-    'Está preparada para o final?', // Fase 20
-    'Te admiro demais!', // Fase 21
-    'Vai lá, detetive romântica!', // Fase 22
-    'Se eu fosse um presente, queria ser achado por você!', // Fase 23
-    'Você está se superando!', // Fase 24
-    'Quase no topo, meu amor!', // Fase 25
-    'Parabéns, você encontrou mais um!', // Fase 26
-    'Você chegou tão longe! ❤️', // Fase 27
-    'Seu esforço me encanta!', // Fase 28
-    'A próxima é a última, respira!', // Fase 29
-    'Você venceu! Encontrou tudo com amor! 💖', // Fase 30
+    '', // Frase da Fase 0 → Fase 1
+    'Como os boatos diziam!! ...', // Frase da Fase 1 → Fase 2
+    'Parabéns, você está conseguindo, continue!', // Frase da Fase 2 → Fase 3
+    'Mais um presente achado com sucesso!', // Frase da Fase 3 → Fase 4
+    'Você é incrível, olha só esse avanço!', // Frase da Fase 4 → Fase 5
+    'Eu sabia que você ia acertar!', // Frase da Fase 5 → Fase 6
+    'Seu progresso me enche de alegria!', // Frase da Fase 6 → Fase 7
+    'Você está arrasando demais!', // Frase da Fase 7 → Fase 8
+    'Isso aqui está ficando emocionante!', // Frase da Fase 8 → Fase 9
+    'Parabéns! Mais uma etapa vencida!', // Frase da Fase 9 → Fase 10
+    'Uau, você chegou até aqui, que orgulho!', // Frase da Fase 10 → Fase 11
+    'Você é uma campeã!', // Frase da Fase 11 → Fase 12
+    'Continue assim, você está indo muito bem!', // Frase da Fase 12 → Fase 13
+    'Você é brilhante! Continue!', // Frase da Fase 13 → Fase 14
+    'Que fofa você procurando tudo direitinho!', // Frase da Fase 14 → Fase 15
+    'Tá chegando no fim, hein!', // Frase da Fase 15 → Fase 16
+    'Você merece todos esses momentos!', // Frase da Fase 16 → Fase 17
+    'Cada presente é um pedacinho do meu amor!', // Frase da Fase 17 → Fase 18
+    'Você é maravilhosa!', // Frase da Fase 18 → Fase 19
+    'Quase lá! Faltam pouquinhos!', // Frase da Fase 19 → Fase 20
+    'Está preparada para o final?', // Frase da Fase 20 → Fase 21
+    'Te admiro demais!', // Frase da Fase 21 → Fase 22
+    'Vai lá, detetive romântica!', // Frase da Fase 22 → Fase 23
+    'Se eu fosse um presente, queria ser achado por você!', // Frase da Fase 23 → Fase 24
+    'Você está se superando!', // Frase da Fase 24 → Fase 25
+    'Quase no topo, meu amor!', // Frase da Fase 25 → Fase 26
+    'Parabéns, você encontrou mais um!', // Frase da Fase 26 → Fase 27
+    'Você chegou tão longe! ❤️', // Frase da Fase 27 → Fase 28
+    'Seu esforço me encanta!', // Frase da Fase 28 → Fase 29
+    'A próxima é a última, respira!', // Frase da Fase 29 → Fase 30
+    'Você venceu! Encontrou tudo com amor! 💖', // Frase da Fase 30 → Fim
   ];
 
   ngAfterViewInit(): void {
