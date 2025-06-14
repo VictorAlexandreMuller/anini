@@ -23,6 +23,14 @@
       </button>
 
       <button
+        class="btn-entendi"
+        *ngIf="currentSlide === slides.length - 1"
+        (click)="fechar.emit()"
+      >
+        Entendi
+      </button>
+
+      <button
         (click)="avancarSlide()"
         [disabled]="currentSlide === slides.length - 1"
         class="btn-seta"
@@ -30,13 +38,5 @@
         ▶
       </button>
     </div>
-
-    <button
-      class="btn-fechar"
-      *ngIf="currentSlide === slides.length - 1"
-      (click)="fechar.emit()"
-    >
-      Entendi
-    </button>
   </div>
 </div>

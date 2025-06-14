@@ -22,16 +22,16 @@
   text-align: center;
   box-shadow: 0 0 12px wheat;
   animation: slideUp 2s ease forwards;
+}
 
-  button {
-    background: #28a745;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 500;
-  }
+.btn-entendi {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .modal-titulo {
@@ -69,7 +69,7 @@
   justify-content: space-between;
 }
 
-.carousel-controles button {
+.btn-seta {
   background-color: #007bff;
   color: white;
   border: none;
@@ -79,8 +79,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .btn-seta[disabled] {

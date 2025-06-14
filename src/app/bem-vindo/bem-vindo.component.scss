@@ -22,16 +22,16 @@
   text-align: center;
   box-shadow: 0 0 12px wheat;
   animation: slideUp 2s ease forwards;
+}
 
-  button {
-    background: #28a745;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 500;
-  }
+.btn-entendi {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .modal-titulo {
@@ -70,7 +70,7 @@
   justify-content: space-between;
 }
 
-.carousel-controles button {
+.btn-seta {
   background-color: #007bff;
   color: white;
   border: none;
@@ -108,7 +108,7 @@
   height: 200px;
   position: absolute;
   left: 26%;
-  bottom: 15%;
+  bottom: 9%;
   z-index: 9999;
   pointer-events: none;
   transform: scaleX(-1);
