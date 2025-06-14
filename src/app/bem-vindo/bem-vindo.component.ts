@@ -14,7 +14,7 @@ images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   slides = [
   { texto: 'Olá!', imagem: 'vitinhoSagaz.png' },
-  { texto: 'Eu sou o Vitinho.', imagem: 'vitinhoSagaz.png' },
+  { texto: 'Eu sou o Victinho.', imagem: 'vitinhoSagaz.png' },
   { texto: 'E Bem-Vinda ao Castelo dos Tesouros!', imagem: 'vitinhoSagaz.png' },
   { texto: 'Você deve ser a Srta. Laura, certo?', imagem: 'vitinhoSagaz.png' },
   { texto: 'O Sr. Victor, meu mestre, nos avisou da sua chegada.', imagem: 'vitinhoSagaz.png' },
@@ -34,7 +34,7 @@ images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   { texto: 'É claro que ele deve estar funcionando!!', imagem: 'vitinhoSagaz.png' },
   { texto: 'Como seremos uma dupla ao longo dessa exploração, espero aprender muito ao seu lado.', imagem: 'vitinhoSagaz.png' },
   { texto: 'Vamos ficar atentos a todas as pistas.', imagem: 'vitinhoSagaz.png' },
-  { texto: 'Mas é isso.', imagem: 'vitinhoSagaz.png' },
+  { texto: 'Mas é isso!', imagem: 'vitinhoSagaz.png' },
   { texto: 'Espero que se divirta nessa caça ao tesouro junto comigo.', imagem: 'vitinhoSagaz.png' },
   { texto: 'Fiquei sabendo que existem 10 tesouros espalhados e escondidos por aqui.', imagem: 'vitinhoExplicando.png' },
   { texto: 'Como você já chegou, não vamos mais perder tempo.', imagem: 'vitinhoExplicando.png' },
