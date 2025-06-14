@@ -36,7 +36,7 @@ export class JogoComponent implements AfterViewInit {
   botaoConfirmarHabilitado = false;
   intervaloConfirmacao: any;
   maxCaracteresPorParte: number = 220;
-  mostrarImagemLaura = false;
+  imagemLauraJaMostrada = false;
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
@@ -323,7 +323,7 @@ export class JogoComponent implements AfterViewInit {
   }
 
   iniciarJogo(): void {
-    this.mostrarImagemLaura = true;
+    this.imagemLauraJaMostrada = true;
     this.mapaComponent.avançarFase(); // Avança da fase 0 para a 1
     this.atualizarPartesDica(); // Atualiza a dica da nova fase
     this.codigoDigitado = ''; // Limpa qualquer código digitado

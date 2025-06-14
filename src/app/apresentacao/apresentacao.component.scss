@@ -5,13 +5,17 @@
   text-align: center;
 }
 
-.imagemm {
+.imagemLaura {
   background-image: url(../../assets/otimista.png);
   width: 170px;
   height: 170px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  // border: 2px solid wheat;
+  // box-shadow: 0px 0px 15px wheat;
+  filter: drop-shadow(0px 0px 15px wheat);
 }
 
 .imagemBau {
@@ -51,6 +55,8 @@
   overflow: hidden;
   border: none;
   padding: 1rem;
+  box-shadow: 0px 0px 15px white;
+  animation: pulse-shadow 5s infinite;
 
   &::before {
     content: "";
@@ -78,3 +84,16 @@
     background-position: 100% -50%;
   }
 }
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  }
+}
+
