@@ -37,6 +37,7 @@ export class JogoComponent implements AfterViewInit {
   intervaloConfirmacao: any;
   maxCaracteresPorParte: number = 220;
   imagemLauraJaMostrada = false;
+  mostrarImagemLaura = true;
 
   get faseAtual(): number {
     return this.mapaComponent?.faseAtual ?? 0;
@@ -253,9 +254,11 @@ export class JogoComponent implements AfterViewInit {
     this.atualizarPartesDica();
     this.codigoDigitado = '';
     this.codigoValido = false;
+    this.mostrarImagemLaura = true;
   }
 
   mostrarModalParabens() {
+    this.mostrarImagemLaura = false;
     this.atualizarPartesFraseParabens();
     this.modalAberto = true;
   }
