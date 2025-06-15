@@ -35,7 +35,8 @@ export class JogoComponent implements AfterViewInit {
   contadorConfirmacao = 5;
   botaoConfirmarHabilitado = false;
   intervaloConfirmacao: any;
-  maxCaracteresPorParte: number = 220;
+  maxCaracteresPorParteDicas: number = 220;
+  maxCaracteresPorParteParabens: number = 200;
   imagemLauraJaMostrada = false;
   mostrarImagemLaura = true;
 
@@ -50,10 +51,10 @@ export class JogoComponent implements AfterViewInit {
     'Então aqui vai o primeiro enigma: "Daqui a pouco está quase na hora de dormir, será que precisaremos nos vestir adequadamente para sonharmos?', // Fase 3
     'De acordo com o Radar da Shopee, o próximo tesouro também parece estar próximo, então lá vai o próximo enigma: "Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou eu quem atendo ao seu chamado engolindo tudo para dentro.', // Fase 4
     'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: "Eu sou dual color, Preto e Branco me definem. Se eu não fosse um jogo, poderia ser facilmente confundido com uma Zebra.', // Fase 5
-    'Você está arrasando!', // Fase 6
-    'Cada vez mais perto!', // Fase 7
-    'Você é demais!', // Fase 8
-    'Mais uma etapa vencida!', // Fase 9
+    'O Radar está dizendo que a temperatura do próximo tesouro está bem congelante, é quase como se ele estivesse em cima de um iceberg. Dessa vez não é uma charada, eu não sei como descrever isso, você tem ideia de onde possa ser este lugar? 🥶', // Fase 6
+    'Srta. Laura, vi que tem um outro tesouro perto de onde estávamos na fase anterior a esta, parece estar perto de um "instrumento musical para animais (?)".', // Fase 7
+    'Eu sabia que esse Radar duvidoso não era tão confiável, aparentemente haverão novos tesouros em lugares já conhecidos que passamos anteriormente... Dessa vez, deveste procurar o tesouro quase no mesmo lugar do tesouro da fase 3, a dica dizia algo sobre "vestir" e "hora de dormir"...', // Fase 8
+    'Vamos para o penúltimo tesouro. Aparentemente ele também está perto, só que o radar avisa sobre uma alta taxa umidade neste novo ambiente...', // Fase 9
     'Você está fazendo isso com perfeição!', // Fase 10
     'Metade do caminho quase lá!', // Fase 11
     'Continue focada!', // Fase 12
@@ -78,15 +79,15 @@ export class JogoComponent implements AfterViewInit {
   ];
 
   codigosFases: string[] = [
-    '',   // Código da Fase 0 → desbloqueia a Fase 1
-    '1',  // Código da Fase 1 → desbloqueia a Fase 2
-    '2',  // Código da Fase 2 → desbloqueia a Fase 3
-    '3',  // Código da Fase 3 → desbloqueia a Fase 4
-    '4',  // Código da Fase 4 → desbloqueia a Fase 5
-    '5',  // Código da Fase 5 → desbloqueia a Fase 6
-    '6',  // Código da Fase 6 → desbloqueia a Fase 7
-    '7',  // Código da Fase 7 → desbloqueia a Fase 8
-    '8',  // Código da Fase 8 → desbloqueia a Fase 9
+    '', // Código da Fase 0 → desbloqueia a Fase 1
+    '1', // Código da Fase 1 → desbloqueia a Fase 2
+    '2', // Código da Fase 2 → desbloqueia a Fase 3
+    '3', // Código da Fase 3 → desbloqueia a Fase 4
+    '4', // Código da Fase 4 → desbloqueia a Fase 5
+    '5', // Código da Fase 5 → desbloqueia a Fase 6
+    '6', // Código da Fase 6 → desbloqueia a Fase 7
+    '7', // Código da Fase 7 → desbloqueia a Fase 8
+    '8', // Código da Fase 8 → desbloqueia a Fase 9
     '9', // Código da Fase 9 → desbloqueia a Fase 10
     '10', // Código da Fase 10 → desbloqueia a Fase 11
     '11', // Código da Fase 11 → desbloqueia a Fase 12
@@ -112,37 +113,38 @@ export class JogoComponent implements AfterViewInit {
   ];
 
   frasesParabens: string[] = [
-    '', // Frase da Fase 0 → Fase 1
-    'Como os boatos diziam!! ...', // Frase da Fase 1 → Fase 2
-    'Parabéns, você está conseguindo, continue!', // Frase da Fase 2 → Fase 3
-    'Mais um presente achado com sucesso!', // Frase da Fase 3 → Fase 4
-    'Você é incrível, olha só esse avanço!', // Frase da Fase 4 → Fase 5
-    'Eu sabia que você ia acertar!', // Frase da Fase 5 → Fase 6
-    'Seu progresso me enche de alegria!', // Frase da Fase 6 → Fase 7
-    'Você está arrasando demais!', // Frase da Fase 7 → Fase 8
-    'Isso aqui está ficando emocionante!', // Frase da Fase 8 → Fase 9
-    'Parabéns! Mais uma etapa vencida!', // Frase da Fase 9 → Fase 10
-    'Uau, você chegou até aqui, que orgulho!', // Frase da Fase 10 → Fase 11
-    'Você é uma campeã!', // Frase da Fase 11 → Fase 12
-    'Continue assim, você está indo muito bem!', // Frase da Fase 12 → Fase 13
-    'Você é brilhante! Continue!', // Frase da Fase 13 → Fase 14
-    'Que fofa você procurando tudo direitinho!', // Frase da Fase 14 → Fase 15
-    'Tá chegando no fim, hein!', // Frase da Fase 15 → Fase 16
-    'Você merece todos esses momentos!', // Frase da Fase 16 → Fase 17
-    'Cada presente é um pedacinho do meu amor!', // Frase da Fase 17 → Fase 18
-    'Você é maravilhosa!', // Frase da Fase 18 → Fase 19
-    'Quase lá! Faltam pouquinhos!', // Frase da Fase 19 → Fase 20
-    'Está preparada para o final?', // Frase da Fase 20 → Fase 21
-    'Te admiro demais!', // Frase da Fase 21 → Fase 22
-    'Vai lá, detetive romântica!', // Frase da Fase 22 → Fase 23
-    'Se eu fosse um presente, queria ser achado por você!', // Frase da Fase 23 → Fase 24
-    'Você está se superando!', // Frase da Fase 24 → Fase 25
-    'Quase no topo, meu amor!', // Frase da Fase 25 → Fase 26
-    'Parabéns, você encontrou mais um!', // Frase da Fase 26 → Fase 27
-    'Você chegou tão longe! ❤️', // Frase da Fase 27 → Fase 28
-    'Seu esforço me encanta!', // Frase da Fase 28 → Fase 29
-    'A próxima é a última, respira!', // Frase da Fase 29 → Fase 30
-    'Você venceu! Encontrou tudo com amor! 💖', // Frase da Fase 30 → Fim
+    '', // ignora
+    '', // ignora
+    'Muito bem!! Vamos tentar mais uma vez para ver se você pegou o jeito dessa nova região.', // Frase da Fase 1 → Fase 2
+    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Frase da Fase 2 → Fase 3
+    'Você é ótima Srta. Laura! Vamos logo para o próximo tesouro antes que a nos dar sono perto desses pijamas 💤', // Frase da Fase 3 → Fase 4
+    'Eu estou impressionado que esse Radar duvidoso realmente funcione...', // Frase da Fase 4 → Fase 5
+    'Uau, que de mais!! Fiquei sabendo que o Sr. Victor troca esses vales por outras coisas, o que será que ele te dará por este vale misterioso?', // Frase da Fase 5 → Fase 6
+    'Esse sabonete é maravilhoso!! Ouvi dizer que uma princesa de um reino vizinho utiliza bastante esse sabonete para lavar o seu lindo rosto durante o banho e sempre faz um barulho engraçado quando vai enxaguar "Ahh Bruuuxxxxx".', // Frase da Fase 6 → Fase 7
+    'Que lindas!! Elas ficarão perfeitas no seu cabelo, Srta. Laura!! Vamos continuar a nossa caça ao tesouro, aparentemente estamos quase no fim.', // Frase da Fase 7 → Fase 8
+    'Nesse inverno que entramos, isso caberá como uma luva! Só que nos pés...', // Frase da Fase 8 → Fase 9
+    'SRTA LAURA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Essa procura está melhor do que o programa "Febre do Ouro" da Discovery Channel 😄', // Frase da Fase 9 → Fase 10
+    'Você é uma campeã!', // Frase da Fase 10 → Fase 11
+    'Continue assim, você está indo muito bem!', // Frase da Fase 11 → Fase 12
+    'Você é brilhante! Continue!', // Frase da Fase 12 → Fase 13
+    'Que fofa você procurando tudo direitinho!', // Frase da Fase 13 → Fase 14
+    'Tá chegando no fim, hein!', // Frase da Fase 14 → Fase 15
+    'Você merece todos esses momentos!', // Frase da Fase 15 → Fase 16
+    'Cada presente é um pedacinho do meu amor!', // Frase da Fase 16 → Fase 17
+    'Você é maravilhosa!', // Frase da Fase 17 → Fase 18
+    'Quase lá! Faltam pouquinhos!', // Frase da Fase 18 → Fase 19
+    'Está preparada para o final?', // Frase da Fase 19 → Fase 20
+    'Te admiro demais!', // Frase da Fase 20 → Fase 21
+    'Vai lá, detetive romântica!', // Frase da Fase 21 → Fase 22
+    'Se eu fosse um presente, queria ser achado por você!', // Frase da Fase 22 → Fase 23
+    'Você está se superando!', // Frase da Fase 23 → Fase 24
+    'Quase no topo, meu amor!', // Frase da Fase 24 → Fase 25
+    'Parabéns, você encontrou mais um!', // Frase da Fase 25 → Fase 26
+    'Você chegou tão longe! ❤️', // Frase da Fase 26 → Fase 27
+    'Seu esforço me encanta!', // Frase da Fase 27 → Fase 28
+    'A próxima é a última, respira!', // Frase da Fase 28 → Fase 29
+    'Te amo!!', // Frase da Fase 29 → Fase 30
+    'Você venceu! Encontrou tudo com amor! 💖', // Frase da Fase 30 → FIM
   ];
 
   ngAfterViewInit(): void {
@@ -162,7 +164,7 @@ export class JogoComponent implements AfterViewInit {
 
     for (const palavra of palavras) {
       const tentativa = parteAtual ? `${parteAtual} ${palavra}` : palavra;
-      if (tentativa.length <= this.maxCaracteresPorParte) {
+      if (tentativa.length <= this.maxCaracteresPorParteDicas) {
         parteAtual = tentativa;
       } else {
         if (parteAtual) partes.push(parteAtual);
@@ -265,7 +267,7 @@ export class JogoComponent implements AfterViewInit {
 
   atualizarPartesFraseParabens(): void {
     const faseAtual = this.mapaComponent?.faseAtual + 1 || 0;
-    const fraseCompleta = this.frasesParabens[faseAtual] || 'Parabéns!';
+    const fraseCompleta = this.frasesParabens[faseAtual] || '';
 
     const palavras = fraseCompleta.replace(/\s+/g, ' ').trim().split(' ');
     const partes: string[] = [];
@@ -273,7 +275,7 @@ export class JogoComponent implements AfterViewInit {
 
     for (const palavra of palavras) {
       const tentativa = parteAtual ? `${parteAtual} ${palavra}` : palavra;
-      if (tentativa.length <= this.maxCaracteresPorParte) {
+      if (tentativa.length <= this.maxCaracteresPorParteParabens) {
         parteAtual = tentativa;
       } else {
         if (parteAtual) partes.push(parteAtual);
