@@ -282,8 +282,8 @@
 
   width: 600px;
   max-width: 90%;
+  max-height: 500px;
   height: 400px;
-  // min-height: 300px;
 
   display: flex;
   flex-direction: column;
@@ -294,22 +294,24 @@
   transform: translate(-50%, -50%);
 
   .paragrafoParabens {
-    word-break: normal;
-    overflow-wrap: normal;
-    white-space: normal;
-    line-break: auto;
+    background-color: rgb(92, 92, 92);
+    border-radius: 20px;
+    padding: 10px;
 
     p {
-    word-break: normal; // impede quebrar no meio da palavra
-    overflow-wrap: normal; // mantém palavras inteiras
-    white-space: normal; // quebra apenas entre palavras
-    line-break: auto;
+      padding: 2px 5px;
+      text-align: center;
+      color: white;
+      word-break: normal; // impede quebrar no meio da palavra
+      overflow-wrap: normal; // mantém palavras inteiras
+      white-space: normal; // quebra apenas entre palavras
+      line-break: auto;
     }
   }
 
   .divComTodaAparteDeBaixoDoParagrafo {
     position: absolute;
-    bottom: 7%;
+    bottom: 0%;
   }
 
   .navegacao-parabens {
@@ -362,12 +364,10 @@
 .organizacaoModal {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  // justify-content: center;
   height: 100%;
   position: relative;
-
-  p {
-    color: white;
-  }
 
   .botaoFecharModelParabens {
     width: 100%;
