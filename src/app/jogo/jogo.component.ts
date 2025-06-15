@@ -46,14 +46,15 @@ export class JogoComponent implements AfterViewInit {
 
   dicas: string[] = [
     '', // Fase 0
-    'Ficamos sabendo que existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 1
-    'De acordo com o nosso radar, identificamos que o próximo tesouro também está por perto, neste mesmo ambiente, mas vemos que, dessa vez, existem muitos itens compridos junto com ele, onde será que ele está?', // Fase 2
-    'Então aqui vai o primeiro enigma: "Daqui a pouco está quase na hora de dormir, será que precisaremos nos vestir adequadamente para sonharmos?', // Fase 3
-    'De acordo com o Radar da Shopee, o próximo tesouro também parece estar próximo, então lá vai o próximo enigma: "Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou eu quem atendo ao seu chamado engolindo tudo para dentro.', // Fase 4
-    'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: "Eu sou dual color, Preto e Branco me definem. Se eu não fosse um jogo, poderia ser facilmente confundido com uma Zebra.', // Fase 5
-    'O Radar está dizendo que a temperatura do próximo tesouro está bem congelante, é quase como se ele estivesse em cima de um iceberg. Dessa vez não é uma charada, eu não sei como descrever isso, você tem ideia de onde possa ser este lugar? 🥶', // Fase 6
-    'Srta. Laura, vi que tem um outro tesouro perto de onde estávamos na fase anterior a esta, parece estar perto de um "instrumento musical para animais (?)".', // Fase 7
-    'Eu sabia que esse Radar duvidoso não era tão confiável, aparentemente haverão novos tesouros em lugares já conhecidos que passamos anteriormente... Dessa vez, deveste procurar o tesouro quase no mesmo lugar do tesouro da fase 3, a dica dizia algo sobre "vestir" e "hora de dormir"...', // Fase 8
+    'De acordo com o nosso Radar existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 1
+    'De acordo com o Radar, identifiquei que o próximo tesouro também está por perto. Parece até que neste mesmo ambiente, mas parece que existem muitos itens compridos junto com ele, onde será que ele pode estar?', // Fase 2
+    'Então aqui vai o primeiro enigma: <i>Daqui a pouco está quase na hora de dormir, será que precisaremos nos vestir adequadamente para sonharmos?</i>', // Fase 3
+    'Até agora o nosso Radar não falhou! O próximo tesouro também parece estar próximo, então lá vai o próximo enigma: <i>Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou </i> <i> eu quem atendo ao seu chamado engolindo tudo para dentro.</i>', // Fase 4
+    'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: <i>Sou dual color. Preto e Branco me definem. Se eu não fosse um jogo, talvez pudesse ser facilmente confundido com uma Zebra?</i>', // Fase 5
+    'O Radar quebrou?! Ele está dizendo que a temperatura do próximo tesouro está congelante, é quase como se o tesouro estivesse em cima de um iceberg. Dessa vez não é uma charada, eu não sei onde está esse tesouro. Você tem ideia de onde possa ter um lugar tão frio por aqui?', // Fase 6
+    'Srta. Laura, acho que o nosso objeto duvidoso tenha começado a falhar. Vi que ele localizou um outro tesouro perto de onde estávamos na fase anterior a esta, parece estar perto de um <i>"instrumento musical para animais (?)"</i>.', // Fase 7
+
+    'Aparentemente haverão novos tesouros em lugares que já passamos anteriormente... Dessa vez, deveste procurar o tesouro quase no mesmo lugar do tesouro da fase 3, a dica dizia algo sobre "vestir" e "hora de dormir"...', // Fase 8
     'Vamos para o penúltimo tesouro. Aparentemente ele também está perto, só que o radar avisa sobre uma alta taxa umidade neste novo ambiente...', // Fase 9
     'Você está fazendo isso com perfeição!', // Fase 10
     'Metade do caminho quase lá!', // Fase 11
@@ -115,13 +116,14 @@ export class JogoComponent implements AfterViewInit {
   frasesParabens: string[] = [
     '', // ignora
     '', // ignora
-    'Muito bem!! Vamos tentar mais uma vez para ver se você pegou o jeito dessa nova região.', // Frase da Fase 1 → Fase 2
-    'Como os boatos diziam!! Você realmente é muito boa!! Temos sorte por te-la conosco. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram fáceis de mais, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas... 🙈 Sendo assim, pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que possamos continuar indo atrás dos demais tesouro sem preocupações.', // Frase da Fase 2 → Fase 3
-    'Você é ótima Srta. Laura! Vamos logo para o próximo tesouro antes que a nos dar sono perto desses pijamas 💤', // Frase da Fase 3 → Fase 4
-    'Eu estou impressionado que esse Radar duvidoso realmente funcione...', // Frase da Fase 4 → Fase 5
-    'Uau, que de mais!! Fiquei sabendo que o Sr. Victor troca esses vales por outras coisas, o que será que ele te dará por este vale misterioso?', // Frase da Fase 5 → Fase 6
-    'Esse sabonete é maravilhoso!! Ouvi dizer que uma princesa de um reino vizinho utiliza bastante esse sabonete para lavar o seu lindo rosto durante o banho e sempre faz um barulho engraçado quando vai enxaguar "Ahh Bruuuxxxxx".', // Frase da Fase 6 → Fase 7
-    'Que lindas!! Elas ficarão perfeitas no seu cabelo, Srta. Laura!! Vamos continuar a nossa caça ao tesouro, aparentemente estamos quase no fim.', // Frase da Fase 7 → Fase 8
+    'Muito bom!! Vamos tentar mais um para ver se você pegou o jeito de como faremos as nossas explorações.', // Frase da Fase 1 → Fase 2
+    '😄<br>Como os boatos diziam!! Você realmente é muito boa e temos muita sorte por te-la do nosso lado. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram muitos fáceis, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas. E... Eu já ia me esquecendo... Pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que você possa acumular todos os desouros encontrados.', // Frase da Fase 2 → Fase 3
+    '💤<br>Você é ótima Srta. Laura! Vamos logo para o próximo tesouro antes que a gente durma perto desses pijamas.', // Frase da Fase 3 → Fase 4
+    '📡<br>Eu estou impressionado, este Radar duvidoso é realmente muito bom! Ele só não é melhor do que você, Srta. Laura.', // Frase da Fase 4 → Fase 5
+    '❔<br>Uma surpresa?! Fiquei sabendo que o Sr. Victor consegue trocar esses vales por outras coisas... O que será que ele te dará em troca desse vale misterioso?', // Frase da Fase 5 → Fase 6
+    '🥶<br>Aiiii, que fr-friiiiiiioooo... Ouvi dizer que uma princesa das terras vizinhas sempre lava o seu lindo rosto com este sabonete. E sempre, quando vai enxaguar, faz um barulho engraçado. Dizem que o barulho é mais ou menos assim "Ahh Bruuuxxxxx".', // Frase da Fase 6 → Fase 7
+    '🐄<br>Esse instrumento poderia atrair tesouros ao em vez de rebanhos, né?! Dai poderíamos parar de usar esse Radar duvidoso.', // Frase da Fase 7 → Fase 8
+
     'Nesse inverno que entramos, isso caberá como uma luva! Só que nos pés...', // Frase da Fase 8 → Fase 9
     'SRTA LAURA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Essa procura está melhor do que o programa "Febre do Ouro" da Discovery Channel 😄', // Frase da Fase 9 → Fase 10
     'Você é uma campeã!', // Frase da Fase 10 → Fase 11
