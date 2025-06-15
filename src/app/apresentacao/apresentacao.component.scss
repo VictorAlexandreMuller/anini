@@ -25,16 +25,59 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../../assets/bau-do-tesouro.png);
+
+  filter: drop-shadow(0 0 0px red); // estado inicial
+  animation: pulseDropShadowMulticolor 3s infinite ease-in-out;
+}
+
+@keyframes pulseDropShadowMulticolor {
+  0% {
+    filter: drop-shadow(0 0 4px #e3b947);
+  }
+  25% {
+    filter: drop-shadow(0 0 8px #f7f6b1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #e3b947);
+  }
+  75% {
+    filter: drop-shadow(0 0 8px #f7f6b1);
+  }
+  100% {
+    filter: drop-shadow(0 0 4px #e3b947);
+  }
+}
+
+@keyframes pulseTextShadow {
+  0% {
+    text-shadow: 0 0 10px #e3b947;
+  }
+  25% {
+    text-shadow: 0 0 14px #f7f6b1;
+  }
+  50% {
+    text-shadow: 0 0 18px #e3b947;
+  }
+  75% {
+    text-shadow: 0 0 14px #f7f6b1;
+  }
+  100% {
+    text-shadow: 0 0 10px #e3b947;
+  }
 }
 
 .teste {
   color: white;
   -webkit-text-stroke: 1px black;
-  text-shadow: 0px 0px 5px rgb(32, 255, 244);
+  text-shadow: 0px 0px 10px rgb(250, 125, 15);
+  font-size: 3rem;
+  width: 95%;
+  text-transform: uppercase;
+  animation: pulseTextShadow 2s infinite;
+
 }
 
 .tela-intro p {
-  font-size: 2rem;
   font-weight: bold;
   font-family: "Prompt";
   z-index: 5;

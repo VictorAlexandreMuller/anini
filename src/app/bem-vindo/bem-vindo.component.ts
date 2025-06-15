@@ -15,9 +15,9 @@ export class BemVindoComponent {
 
   slides = [
     { texto: 'Olá!', imagem: 'vitinhoSagaz.png' },
+    { texto: 'Bem-Vinda ao Castelo dos Tesouros!', imagem: 'vitinhoSagaz.png' },
     { texto: 'Eu sou o Victinho.', imagem: 'vitinhoSagaz.png' },
-    { texto: 'E Bem-Vinda ao Castelo dos Tesouros!', imagem: 'vitinhoSagaz.png' },
-    { texto: 'Você deve ser a Srta. Laura, certo?', imagem: 'vitinhoSagaz.png' },
+    { texto: 'E você deve ser a famosa Srta. Laura, certo?', imagem: 'vitinhoSagaz.png' },
     { texto: 'O Sr. Victor, meu mestre, nos avisou da sua chegada.', imagem: 'vitinhoSagaz.png' },
     { texto: 'Nós chegamos ontem à noite, mas ainda não tivemos muito tempo para exploração.', imagem: 'vitinhoSagaz.png' },
     { texto: 'Apenas nos instalamos e fizemos um breve reconhecimento do local.', imagem: 'vitinhoSagaz.png' },
