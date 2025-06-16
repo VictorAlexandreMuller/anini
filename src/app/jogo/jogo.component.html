@@ -191,7 +191,14 @@
 
           <!-- botão de fechar -->
           <div class="botaoFecharModelParabens">
-            <button (click)="fecharModalParabens()">Fechar</button>
+            <button
+              (click)="fecharModalParabens()"
+              [disabled]="
+                indiceParteParabensAtual < partesFraseParabensAtual.length - 1
+              "
+            >
+              Fechar
+            </button>
           </div>
         </div>
       </div>
