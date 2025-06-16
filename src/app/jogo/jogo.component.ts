@@ -52,9 +52,10 @@ export class JogoComponent implements AfterViewInit {
     'Até agora o nosso Radar não falhou! O próximo tesouro também parece estar próximo, então lá vai o próximo enigma: <i>Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou </i> <i> eu quem atendo ao seu chamado engolindo tudo para dentro.</i>', // Fase 4
     'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: <i>Sou dual color. Preto e Branco me definem. Se eu não fosse um jogo, talvez pudesse ser facilmente confundido com uma Zebra?</i>', // Fase 5
     'O Radar quebrou?! Ele está dizendo que a temperatura do próximo tesouro está congelante, é quase como se o tesouro estivesse em cima de um iceberg. Dessa vez não é uma charada, eu não sei onde está esse tesouro. Você tem ideia de onde possa ter um lugar tão frio por aqui?', // Fase 6
-    'Srta. Laura, acho que o nosso objeto duvidoso tenha começado a falhar. Vi que ele localizou um outro tesouro perto de onde estávamos na fase anterior a esta, parece estar perto de um <i>"instrumento musical para animais (?)"</i>.', // Fase 7
+    'Srta. Laura, acho que o nosso Radar duvidoso começou a falhar. Vi que ele localizou um outro tesouro perto de onde estávamos na fase anterior... Parece que esse tesouro esta perto de um <i>instrumento musical para animais</i>(?)', // Fase 7
 
-    'Aparentemente haverão novos tesouros em lugares que já passamos anteriormente... Dessa vez, deveste procurar o tesouro quase no mesmo lugar do tesouro da fase 3, a dica dizia algo sobre "vestir" e "hora de dormir"...', // Fase 8
+    'Dessa vez, deveste procurar o tesouro quase no mesmo lugar do tesouro da fase 3, a dica dizia algo sobre "vestir" e "hora de dormir"...', // Fase 8
+
     'Vamos para o penúltimo tesouro. Aparentemente ele também está perto, só que o radar avisa sobre uma alta taxa umidade neste novo ambiente...', // Fase 9
     'Você está fazendo isso com perfeição!', // Fase 10
     'Metade do caminho quase lá!', // Fase 11
@@ -122,7 +123,7 @@ export class JogoComponent implements AfterViewInit {
     '📡<br>Eu estou impressionado, este Radar duvidoso é realmente muito bom! Ele só não é melhor do que você, Srta. Laura.', // Frase da Fase 4 → Fase 5
     '❔<br>Uma surpresa?! Fiquei sabendo que o Sr. Victor consegue trocar esses vales por outras coisas... O que será que ele te dará em troca desse vale misterioso?', // Frase da Fase 5 → Fase 6
     '🥶<br>Aiiii, que fr-friiiiiiioooo... Ouvi dizer que uma princesa das terras vizinhas sempre lava o seu lindo rosto com este sabonete. E sempre, quando vai enxaguar, faz um barulho engraçado. Dizem que o barulho é mais ou menos assim "Ahh Bruuuxxxxx".', // Frase da Fase 6 → Fase 7
-    '🐄<br>Esse instrumento poderia atrair tesouros ao em vez de rebanhos, né?! Dai poderíamos parar de usar esse Radar duvidoso.', // Frase da Fase 7 → Fase 8
+    '🐄<br>O Berrante poderia ser um instrumento que encontra tesouros ao em vez de chamar rebanhos, né?! Aparentemente haverão novos tesouros em lugares que já passamos anteriormente... Às vezes só não vimos...', // Frase da Fase 7 → Fase 8
 
     'Nesse inverno que entramos, isso caberá como uma luva! Só que nos pés...', // Frase da Fase 8 → Fase 9
     'SRTA LAURA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Essa procura está melhor do que o programa "Febre do Ouro" da Discovery Channel 😄', // Frase da Fase 9 → Fase 10
@@ -148,6 +149,22 @@ export class JogoComponent implements AfterViewInit {
     'Te amo!!', // Frase da Fase 29 → Fase 30
     'Você venceu! Encontrou tudo com amor! 💖', // Frase da Fase 30 → FIM
   ];
+
+  // APAGAR EM PRODUCAO ------------------------------------------------------------------------
+  // ngOnInit(): void {
+  //   window.addEventListener('keydown', this.fecharModalParabensComEnter.bind(this));
+  // }
+
+  // fecharModalParabensComEnter(event: KeyboardEvent): void {
+  //   if (event.key === 'Enter' && this.modalAberto) {
+  //     this.fecharModalParabens();
+  //   }
+  // }
+
+  // ngOnDestroy(): void {
+  //   window.removeEventListener('keydown', this.fecharModalParabensComEnter.bind(this));
+  // }
+  // APAGAR EM PRODUCAO ------------------------------------------------------------------------
 
   ngAfterViewInit(): void {
     setTimeout(() => {
