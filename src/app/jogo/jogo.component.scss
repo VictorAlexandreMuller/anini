@@ -325,7 +325,7 @@
       background: transparent;
       border: none;
       font-size: 24px;
-      color: black;
+      color: white;
       cursor: pointer;
     }
 
@@ -375,6 +375,7 @@
     button {
       border-radius: 20px;
       padding: 5px 20px;
+      font-family: 'Prompt';
     }
 
     button:disabled {
@@ -456,21 +457,6 @@
 }
 
 .imagemVitinhoParabensModal {
-  // border-radius: 50%;
-  // // border: 2px solid wheat;
-  // background-size: cover;
-  // background-position: center;
-  // filter: drop-shadow(0px 0px 15px wheat);
-  // opacity: 1;
-  // width: 200px;
-  // height: 200px;
-  // position: absolute;
-  // left: 50%;
-  // bottom: -25%;
-  // z-index: 9999;
-  // pointer-events: none;
-  // transform: translateX(-50%) scaleX(-1);
-
   background-size: cover;
   background-position: center;
   z-index: 8888;
