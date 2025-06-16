@@ -4,6 +4,11 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { InstrucoesComponent } from '../instrucoes/instrucoes.component';
 import { BemVindoComponent } from '../bem-vindo/bem-vindo.component';
 
+interface ParabensItem {
+  texto: string;
+  imagem: string; // nome do arquivo em src/assets/parabens/
+}
+
 @Component({
   selector: 'app-jogo',
   standalone: true,
@@ -22,11 +27,9 @@ export class JogoComponent implements AfterViewInit {
   mostrarInstrucoes = false;
   mostrarFade = true;
   carregado = false;
-  mostrarModal = false;
   codigoDigitado: string = '';
   codigoValido: boolean = false;
   modalAberto: boolean = false;
-  fraseParabensAtual: string = '';
   indiceParteAtual = 0;
   partesDicaAtual: string[] = [];
   partesFraseParabensAtual: string[] = [];
@@ -114,41 +117,42 @@ export class JogoComponent implements AfterViewInit {
     'YOUAREMYRACH', // Código da Fase 30 → desbloqueia a mensagem final de Parabéns
   ];
 
-  frasesParabens: string[] = [
-    '', // ignora
-    '', // ignora
-    'Muito bom!! Vamos tentar mais um para ver se você pegou o jeito de como faremos as nossas explorações.', // Frase da Fase 1 → Fase 2
-    '😄<br>Como os boatos diziam!! Você realmente é muito boa e temos muita sorte por te-la do nosso lado. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram muitos fáceis, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas. E... Eu já ia me esquecendo... Pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que você possa acumular todos os desouros encontrados.', // Frase da Fase 2 → Fase 3
-    '💤<br>Você é ótima Srta. Laura! Vamos logo para o próximo tesouro antes que a gente durma perto desses pijamas.', // Frase da Fase 3 → Fase 4
-    '📡<br>Eu estou impressionado, este Radar duvidoso é realmente muito bom! Ele só não é melhor do que você, Srta. Laura.', // Frase da Fase 4 → Fase 5
-    '❔❔<br>Uma surpresa?! Fiquei sabendo que o Sr. Victor consegue trocar esses vales por outras coisas... O que será que ele te dará em troca desse vale misterioso?', // Frase da Fase 5 → Fase 6
-    '🥶<br>Aiiii, que fr-friiiiiiioooo... Ouvi dizer que uma princesa das terras vizinhas sempre lava o seu lindo rosto com este sabonete. E sempre, quando vai enxaguar, faz um barulho engraçado. Dizem que o barulho é mais ou menos assim "Ahh Bruuuxxxxx".', // Frase da Fase 6 → Fase 7
-    '🐄<br>O Berrante poderia ser um instrumento que encontra tesouros ao em vez de chamar rebanhos, né?! Aparentemente haverão novos tesouros em lugares que já passamos anteriormente... Às vezes só não vimos...', // Frase da Fase 7 → Fase 8
-
-    '', // Frase da Fase 8 → Fase 9
-    '❕❕<br>SRTA LAURA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Essa procura está melhor do que o programa "Febre do Ouro" da Discovery Channel 😄', // Frase da Fase 9 → Fase 10
-    '', // Frase da Fase 10 → Fase 11
-    '', // Frase da Fase 11 → Fase 12
-    '', // Frase da Fase 12 → Fase 13
-    '', // Frase da Fase 13 → Fase 14
-    '', // Frase da Fase 14 → Fase 15
-    '', // Frase da Fase 15 → Fase 16
-    '', // Frase da Fase 16 → Fase 17
-    '', // Frase da Fase 17 → Fase 18
-    '', // Frase da Fase 18 → Fase 19
-    '', // Frase da Fase 19 → Fase 20
-    '🔧<br>O que?? Um tesouro escondido?! Só um segundo, deixe eu arrumar o Radar...<br><i>(Arrumando o Radar)</i><br>Pronto... Mas... PERA... SENHORITA LAURA!!', // Frase da Fase 20 → Fase 21
-    '', // Frase da Fase 21 → Fase 22
-    '', // Frase da Fase 22 → Fase 23
-    '', // Frase da Fase 23 → Fase 24
-    '', // Frase da Fase 24 → Fase 25
-    '', // Frase da Fase 25 → Fase 26
-    '', // Frase da Fase 26 → Fase 27
-    '', // Frase da Fase 27 → Fase 28
-    '', // Frase da Fase 28 → Fase 29
-    '', // Frase da Fase 29 → Fase 30
-    '💖<br>', // Frase da Fase 30 → FIM
+  parabensItens: ParabensItem[] = [
+    { texto: '', imagem: '' }, // ignora
+    { texto: '', imagem: '' }, // ignora
+    { texto: 'Muito bom!! Vamos tentar mais um para ver se você pegou o jeito de como faremos as nossas explorações.', imagem: 'vitinhoSagaz.png' }, // Fase 1 → Fase 2
+    { texto: '😄<br>Como os boatos diziam!! Você realmente é muito boa e temos muita sorte por te-la do nosso lado. Vamos fazer o seguinte, já que esses dois primeiros tesouros foram muitos fáceis, a partir de agora nós vamos procurar os próximos de uma forma mais divertida... Eu verei mais ou menos a localização dos tesouros no meu radar e, de agora em diante, você procurará com base nos meus enigmas. E... Eu já ia me esquecendo... Pegue a cesta em cima do armário ao lado dos Guarda-Chuvas para que você possa acumular todos os desouros encontrados.', imagem: 'vitinhoSagaz.png' }, // Fase 2 → Fase 3
+    { texto: '💤<br>Você é ótima Srta. Laura! Vamos logo para o próximo tesouro antes que a gente durma perto desses pijamas.', imagem: '' }, // Fase 3 → Fase 4
+    { texto: '📡<br>Eu estou impressionado, este Radar duvidoso é realmente muito bom! Ele só não é melhor do que você, Srta. Laura.', imagem: '' }, // Fase 4 → Fase 5
+    { texto: '❔❔<br>Uma surpresa?! Fiquei sabendo que o Sr. Victor consegue trocar esses vales por outras coisas... O que será que ele te dará em troca desse vale misterioso?', imagem: '' }, // Fase 5 → Fase 6
+    { texto: '🥶<br>Aiiii, que fr-friiiiiiioooo... Ouvi dizer que uma princesa das terras vizinhas sempre lava o seu lindo rosto com este sabonete. E sempre, quando vai enxaguar, faz um barulho engraçado. Dizem que o barulho é mais ou menos assim "Ahh Bruuuxxxxx".', imagem: '' }, // Fase 6 → Fase 7
+    { texto: '🐄<br>O Berrante poderia ser um instrumento que encontra tesouros ao em vez de chamar rebanhos, né?! Aparentemente haverão novos tesouros em lugares que já passamos anteriormente... Às vezes só não vimos...', imagem: '' }, // Fase 7 → Fase 8
+    { texto: '', imagem: '' }, // Fase 8 → Fase 9
+    { texto: '❕❕<br>SRTA LAURA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Essa procura está melhor do que o programa "Febre do Ouro" da Discovery Channel 😄', imagem: '' }, // Fase 9 → Fase 10
+    { texto: '', imagem: '' }, // Fase 10 → Fase 11
+    { texto: '', imagem: '' }, // Fase 11 → Fase 12
+    { texto: '', imagem: '' }, // Fase 12 → Fase 13
+    { texto: '', imagem: '' }, // Fase 13 → Fase 14
+    { texto: '', imagem: '' }, // Fase 14 → Fase 15
+    { texto: '', imagem: '' }, // Fase 15 → Fase 16
+    { texto: '', imagem: '' }, // Fase 16 → Fase 17
+    { texto: '', imagem: '' }, // Fase 17 → Fase 18
+    { texto: '', imagem: '' }, // Fase 18 → Fase 19
+    { texto: '', imagem: '' }, // Fase 19 → Fase 20
+    { texto: '🔧<br>O que?? Um tesouro escondido?! Só um segundo, deixe eu arrumar o Radar...<br><i>(Arrumando o Radar)</i><br>Pronto... Mas... PERA... SENHORITA LAURA!!', imagem: '' }, // Fase 20 → Fase 21
+    { texto: '', imagem: '' }, // Fase 21 → Fase 22
+    { texto: '', imagem: '' }, // Fase 22 → Fase 23
+    { texto: '', imagem: '' }, // Fase 23 → Fase 24
+    { texto: '', imagem: '' }, // Fase 24 → Fase 25
+    { texto: '', imagem: '' }, // Fase 25 → Fase 26
+    { texto: '', imagem: '' }, // Fase 26 → Fase 27
+    { texto: '', imagem: '' }, // Fase 27 → Fase 28
+    { texto: '', imagem: '' }, // Fase 28 → Fase 29
+    { texto: '', imagem: '' }, // Fase 29 → Fase 30
+    { texto: '💖<br>', imagem: '' }, // Fase 30 → Fim
   ];
+
+  currentParabensImg = '';
 
   // APAGAR EM PRODUCAO ------------------------------------------------------------------------
   ngOnInit(): void {
@@ -219,12 +223,12 @@ export class JogoComponent implements AfterViewInit {
   }
 
   avancarFase() {
-    if (!this.mapaComponent) return;
-
-    const faseAtual = this.mapaComponent.faseAtual + 1;
-    this.fraseParabensAtual = this.frasesParabens[faseAtual] || 'Parabéns!';
-    this.modalAberto = true;
-  }
+  const prox = (this.mapaComponent.faseAtual || 0) + 1;
+  const item = this.parabensItens[prox] || { texto: '', imagem: '' };
+  this._dividirTextoEmPartes(item.texto);
+  this.currentParabensImg = item.imagem;
+  this.modalAberto = true;
+}
 
   voltarFase() {
     if (this.mapaComponent) {
@@ -239,10 +243,6 @@ export class JogoComponent implements AfterViewInit {
 
   abrirModal() {
     this.mostrarInstrucoes = true;
-  }
-
-  fecharModal() {
-    this.mostrarModal = false;
   }
 
   verificarCodigo(event: Event): void {
@@ -277,30 +277,27 @@ export class JogoComponent implements AfterViewInit {
 
   mostrarModalParabens() {
     this.mostrarImagemLaura = false;
-    this.atualizarPartesFraseParabens();
+    const prox = (this.mapaComponent.faseAtual || 0) + 1;
+    const item = this.parabensItens[prox] || { texto: '', imagem: '' };
+    this.currentParabensImg = item.imagem;
+    this._dividirTextoEmPartes(item.texto);
     this.modalAberto = true;
   }
 
-  atualizarPartesFraseParabens(): void {
-    const faseAtual = this.mapaComponent?.faseAtual + 1 || 0;
-    const fraseCompleta = this.frasesParabens[faseAtual] || '';
-
-    const palavras = fraseCompleta.replace(/\s+/g, ' ').trim().split(' ');
+  private _dividirTextoEmPartes(textoCompleto: string) {
+    const palavras = textoCompleto.replace(/\s+/g, ' ').trim().split(' ');
     const partes: string[] = [];
-    let parteAtual = '';
-
-    for (const palavra of palavras) {
-      const tentativa = parteAtual ? `${parteAtual} ${palavra}` : palavra;
+    let parte = '';
+    for (const p of palavras) {
+      const tentativa = parte ? `${parte} ${p}` : p;
       if (tentativa.length <= this.maxCaracteresPorParteParabens) {
-        parteAtual = tentativa;
+        parte = tentativa;
       } else {
-        if (parteAtual) partes.push(parteAtual);
-        parteAtual = palavra;
+        partes.push(parte);
+        parte = p;
       }
     }
-
-    if (parteAtual) partes.push(parteAtual);
-
+    if (parte) partes.push(parte);
     this.partesFraseParabensAtual = partes;
     this.indiceParteParabensAtual = 0;
   }

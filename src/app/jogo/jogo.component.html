@@ -43,7 +43,7 @@
 
   <!-- INICIO JOGO, CARD DICAS + MAPA -->
   <!-- <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes || mostrarBemVindo"> -->
-    <div class="jogo-container">
+  <div class="jogo-container">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
       <div
         class="imagemLaura"
@@ -62,8 +62,10 @@
         <div class="divMaiorDicas mb-3">
           <!-- DIV DICAS -->
           <div class="divDicasEsetinhas">
-            <div [innerHTML] = "partesDicaAtual[indiceParteAtual]" class="texto-dica">
-            </div>
+            <div
+              [innerHTML]="partesDicaAtual[indiceParteAtual]"
+              class="texto-dica"
+            ></div>
             <div
               class="navegacao-dica"
               [class.invisivel]="partesDicaAtual.length <= 1"
@@ -149,6 +151,12 @@
   <div class="modal-overlay">
     <div class="modal-conteudo1" (click)="$event.stopPropagation()">
       <div class="imagemLaurinhaModal"></div>
+      <div
+        class="imagemVitinhoParabensModal"
+        [ngStyle]="{
+          'background-image': 'url(assets/Vitinho/' + currentParabensImg + ')'
+        }"
+      ></div>
       <div class="carousel-container organizacaoModal">
         <div class="paragrafoParabens">
           <p
@@ -156,6 +164,7 @@
           ></p>
         </div>
         <div class="divComTodaAparteDeBaixoDoParagrafo w-100">
+          <!-- controles de navegação -->
           <div
             class="navegacao-parabens"
             *ngIf="partesFraseParabensAtual.length > 1"
@@ -166,11 +175,10 @@
             >
               ◀
             </button>
-
-            <span
-              >{{ indiceParteParabensAtual + 1 }} /
-              {{ partesFraseParabensAtual.length }}</span
-            >
+            <span>
+              {{ indiceParteParabensAtual + 1 }} /
+              {{ partesFraseParabensAtual.length }}
+            </span>
             <button
               (click)="avancarParteParabens()"
               [disabled]="
@@ -180,6 +188,8 @@
               ▶
             </button>
           </div>
+
+          <!-- botão de fechar -->
           <div class="botaoFecharModelParabens">
             <button (click)="fecharModalParabens()">Fechar</button>
           </div>
