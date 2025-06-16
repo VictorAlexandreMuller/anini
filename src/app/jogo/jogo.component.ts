@@ -155,19 +155,19 @@ export class JogoComponent implements AfterViewInit {
   currentParabensImg = '';
 
   // APAGAR EM PRODUCAO ------------------------------------------------------------------------
-  ngOnInit(): void {
-    window.addEventListener('keydown', this.fecharModalParabensComEnter.bind(this));
-  }
+  // ngOnInit(): void {
+  //   window.addEventListener('keydown', this.fecharModalParabensComEnter.bind(this));
+  // }
 
-  fecharModalParabensComEnter(event: KeyboardEvent): void {
-    if (event.key === 'Enter' && this.modalAberto) {
-      this.fecharModalParabens();
-    }
-  }
+  // fecharModalParabensComEnter(event: KeyboardEvent): void {
+  //   if (event.key === 'Enter' && this.modalAberto) {
+  //     this.fecharModalParabens();
+  //   }
+  // }
 
-  ngOnDestroy(): void {
-    window.removeEventListener('keydown', this.fecharModalParabensComEnter.bind(this));
-  }
+  // ngOnDestroy(): void {
+  //   window.removeEventListener('keydown', this.fecharModalParabensComEnter.bind(this));
+  // }
   // APAGAR EM PRODUCAO ------------------------------------------------------------------------
 
   ngAfterViewInit(): void {
