@@ -16,6 +16,7 @@ import {
 })
 export class MapaComponent implements AfterViewInit {
   faseAtual = 0;
+  public mostrarFases21a30 = false;
 
   @ViewChildren(
     'fase0, fase1, fase2, fase3, fase4, fase5, fase6, fase7, fase8, fase9, fase10, fase11, fase12, fase13, fase14, fase15, fase16, fase17, fase18, fase19, fase20, fase21, fase22, fase23, fase24, fase25, fase26, fase27, fase28, fase29, fase30'
@@ -32,15 +33,14 @@ export class MapaComponent implements AfterViewInit {
 
   mostrarFase(i: number): boolean {
     if (i <= 10) return true;
-    if (i <= 20 && this.faseAtual >= 10) return true;
-    if (i <= 30 && this.faseAtual >= 20) return true;
-    return false;
+    if (i <= 20) return this.faseAtual >= 10;
+    return this.mostrarFases21a30;
   }
 
   mostrarBloco(y: number): boolean {
     if (y === 1) return true;
     if (y === 2) return this.faseAtual >= 10;
-    if (y === 3) return this.faseAtual >= 20;
+    if (y === 3) return this.mostrarFases21a30;
     return false;
   }
 

@@ -1,7 +1,7 @@
 <div class="plano-de-fundo">
   <div class="fade-tela" *ngIf="mostrarFade"></div>
 
-  <app-bem-vindo
+  <!-- <app-bem-vindo
     *ngIf="mostrarBemVindo"
     (fechar)="exibirInstrucoes()"
   ></app-bem-vindo>
@@ -9,7 +9,7 @@
   <app-instrucoes
     *ngIf="mostrarInstrucoes"
     (fechar)="fecharInstrucoes()"
-  ></app-instrucoes>
+  ></app-instrucoes> -->
 
   <div *ngIf="modalAberto" class="modal-container">
     <ng-container *ngTemplateOutlet="modalParabens"></ng-container>
@@ -42,8 +42,8 @@
   <!-- FIM BOTOES SUPERIORES DIREITA -->
 
   <!-- INICIO JOGO, CARD DICAS + MAPA -->
-  <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes || mostrarBemVindo">
-    <!-- <div class="jogo-container"> -->
+  <!-- <div class="jogo-container" [class.bloqueado]="mostrarInstrucoes || mostrarBemVindo"> -->
+    <div class="jogo-container">
     <div class="cardsExplicativosCacaAoTesouro mb-3">
       <div
         class="imagemLaura"
@@ -126,12 +126,12 @@
             ✅ Concluir
           </button>
 
-          <!-- <button
+          <button
             class="btn-fase avancar PASSE-LIVRE"
             (click)="mostrarModalParabens()"
           >
             ▶
-          </button> -->
+          </button>
         </div>
       </ng-container>
     </div>
