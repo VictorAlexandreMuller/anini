@@ -138,7 +138,7 @@ export class JogoComponent implements AfterViewInit {
     { texto: '🍋<br>Acabamos de falar sobre comida e o Radar nos trouxe para limoeiros. Estou começando a achar que ele escuta tudo o que a gente fala... QUERO MAIS TESOUROS, MAIS, MAIS!!', imagem: 'vitinhoSagaz.png' }, // Fase 18 → Fase 19
     { texto: '🐶<br><i>(Uma das feras derruba o Radar, ele cai no chão e quebra)</i><br>O MEU RADAR!! Ainda bem que estamos quase terminando as nossas buscas... Agora precisarei consertá-lo...', imagem: 'vitinhoTimido.png' }, // Fase 19 → Fase 20
     { texto: '🔧<br>O que?? Um tesouro escondido?! Só um segundo, deixe eu arrumar o Radar...<br><i>(Arrumando o Radar)</i><br>Pronto... Mas... PERA... SENHORITA LAURA!!', imagem: 'vitinhoExplicando.png' }, // Fase 20 → Fase 21
-    { texto: '💭<br><i>Você pensa... Onde será que está o outro tesouro?</i>', imagem: '' }, // Fase 21 → Fase 22
+    { texto: '💭<br><i>Você pensa... Onde será que está o outro tesouro?</i>', imagem: 'radar.png' }, // Fase 21 → Fase 22
     { texto: '😵<br><i>(Victinho volta ao normal)</i><br>Srta. Laura... Eu fiquei muito tempo apagado? O QUE?! DOIS TESOUROS?!', imagem: 'vitinhoTimido.png' }, // Fase 22 → Fase 23
     { texto: '📟<br>A TECNOLOGIA REALMENTE ESTÁ CRIANDO VIDA PRÓPRIA. É A REVOLUÇÃO DAS MÁQUINAS. Vamos tentar isso de novo?', imagem: 'vitinhoExplicando.png' }, // Fase 23 → Fase 24
     { texto: '📟<br>Isso é incrível, será que podemos continuar procurando os tesouros desse jeito?!', imagem: 'vitinhoExplicando.png' }, // Fase 24 → Fase 25
