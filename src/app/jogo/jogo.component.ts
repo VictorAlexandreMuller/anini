@@ -51,36 +51,34 @@ export class JogoComponent implements AfterViewInit {
     '', // Fase 0
     'De acordo com o nosso Radar existe um tesouro escondido aqui por perto, vamos vasculhar algumas gavetas para ver se encontramos...', // Fase 1
     'De acordo com o Radar, identifiquei que o próximo tesouro também está por perto. Parece até que neste mesmo ambiente, mas parece que existem muitos itens compridos junto com ele, onde será que ele pode estar?', // Fase 2
-    'Então aqui vai o primeiro enigma: <i>Daqui a pouco está quase na hora de dormir, será que precisaremos nos vestir adequadamente para sonharmos?</i>', // Fase 3
-    'Até agora o nosso Radar não falhou! O próximo tesouro também parece estar próximo, então lá vai o próximo enigma: <i>Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou </i> <i> eu quem atendo ao seu chamado engolindo tudo para dentro.</i>', // Fase 4
-    'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: <i>Sou dual color. Preto e Branco me definem. Se eu não fosse um jogo, talvez pudesse ser facilmente confundido com uma Zebra?</i>', // Fase 5
+    'Então aqui vai o primeiro enigma: "Daqui a pouco está quase na hora de dormir, será que precisaremos nos vestir adequadamente para sonharmos?"', // Fase 3
+    'Até agora o nosso Radar não falhou! O próximo tesouro também parece estar próximo, então lá vai o próximo enigma: "Sou a primeira e guardo muitas coisas. Geralmente, quando a dona mesa quer se ver livre da bagunça, sou  eu quem atendo ao seu chamado engolindo tudo para dentro."', // Fase 4
+    'Aparentemente o próximo tesouro está longe, mas aqui vai o próximo enigma: "Sou dual color. Preto e Branco me definem. Se eu não fosse um jogo, talvez pudesse ser facilmente confundido com uma Zebra?"', // Fase 5
     'O Radar quebrou?! Ele está dizendo que a temperatura do próximo tesouro está congelante, é quase como se o tesouro estivesse em cima de um iceberg. Dessa vez não é uma charada, eu não sei onde está esse tesouro. Você tem ideia de onde possa ter um lugar tão frio por aqui?', // Fase 6
-    'Srta. Laura, acho que o nosso Radar duvidoso começou a falhar. Vi que ele localizou um outro tesouro perto de onde estávamos na fase anterior... Parece que esse tesouro esta perto de um <i>instrumento musical para animais</i>(?)', // Fase 7
-
-    '', // Fase 8
-
-    '', // Fase 9
-    '', // Fase 10
-    '', // Fase 11
-    '', // Fase 12
-    '', // Fase 13
-    '', // Fase 14
-    '', // Fase 15
-    '', // Fase 16
-    '', // Fase 17
-    '', // Fase 18
-    '', // Fase 19
-    'Srta. Laura, agora que terminamos a busca, você poderia me emprestar uma chave de fenda? Eu gostaria de tentar arrumar este Radar... Acho que tem uma caixa de ferramentas no quarto do Sr. Victor... Poderia pegar pra mim, por favor?', // Fase 20
-    '', // Fase 21
-    '', // Fase 22
-    '', // Fase 23
-    '', // Fase 24
-    '', // Fase 25
-    '', // Fase 26
-    '', // Fase 27
+    'Srta. Laura, acho que o nosso Radar duvidoso começou a falhar. Vi que ele localizou um outro tesouro perto de onde estávamos na fase anterior... Parece que esse tesouro esta perto de um "instrumento musical para animais" (?)', // Fase 7
+    '<i>Bip, Bop. Bip, Bop</i><br>O Radar está com um barulho estranho... Ele está informando que o próximo tesouro está em um lugar perpendicular da onde estava a sua cesta do início... Parece um lugar comprido...', // Fase 8
+    'Sabe do que estou com saudade? De enigma! Então lá vai: "Em meio ao vapor e ao som de água a cair, há um esconderijo que poucos vão descobrir. Não estou na banheira, nem sob o chão, mas próximo à pia, para guardar, sou o seu amigão."', // Fase 9
+    'Eu fiquei sabendo que por aqui tem uma piscina e um parquinho de diversão... Faz tempo que não brinco em um parquinho... O que acha de descansarmos um pouco antes da próxima busca?', // Fase 10
+    'Achei outro tesouro, parece estar perto. O mistério da vez é: "Eu corto o quintal em três partes, mas sou melhor estruturado do que o meu companheiro de serviço. Quem sou eu?"', // Fase 11
+    'O próximo tesouro está longe, mas o próximo enigma está bem perto: "Em um espaço grande e profundo, moram dois gigantes que podem cruzar o mundo, cada um com as suas quatro pernas. Há descartes neste lugar... É lá onde há um tesouro para se encontrar."', // Fase 12
+    'Srta. Laura, seguinte... O eixo "Y" no gráfico do Radar está indicando uma altitude maior do que a atual para o próximo tesouro... Você tem alguma ideia de onde possa ser?', // Fase 13
+    '<i>O Victinho encontra algo... Devemos vasculhar.</i>', // Fase 14
+    '<i>(O Radar grita)</i><br>"Fora do grande castelo dos tesouros, o guardião das águas habita escondido e calado. Um lugar pequeno e sem brilhar. Mas, sem ele, a piscina não se vê respirar."<br>Victinho diz: O que? Agora esse treco fala? Será que ele deve ter algum tipo de Inteligência Artificial que escuta o que eu falo?', // Fase 15
+    'De acordo com o nosso Radar, o próximo tesouro está dentro do castelo. "Num salão amplo onde a calma costuma morar, há um gigante sereno que vive a esperar. Seu corpo é macio com um azul encantador, acolhendo os cansados com todo seu calor."', // Fase 16
+    '"Sou pequena, discreta, mas cheia de funções, guardo segredos da casa, sem chamar a atenção. Entre pratos e copos, produtos de limpeza terão. Abrigo o que falta, sem muita organização. Não sou cozinha, mas dela faço parte, comigo se encontra o que não cabe em nenhum lugar de destaque."', // Fase 17
+    'Esse radar está todo doido, ele sempre está nos mandando para lugares distantes de onde estamos... "Eles guardam a entrada como fiéis sentinelas, com galhos erguidos e folhas sempre belas. Vestem-se de verde com toques de sol, e oferecem o tesouro em forma de anzol. Árvores modestas, mas cheias de intenção, pois escondem segredos em cada limão."', // Fase 18
+    'Srta. Laura, cuidado, este tesouro parece ser perigoso e difício. Banheiro das feras! "Enfrente as feras do nível inferior e reivindique o seu tesouro escondido no banheiro! (Se necessário, solicite ajuda, você é aventureira e não uma domadora)"', // Fase 19
+    'Srta. Laura, estamos quase terminando as nossas buscas, mas preciso arrumar o Radar para continuarmos... Preciso de uma chave de fenda... Acho que tem uma caixa de ferramentas no quarto do Sr. Victor... Poderia pegar pra mim, por favor?', // Fase 20
+    '<i>Victinho está paralizado. Você toma o radar da mão dele e percebe que os DOIS próximos tesouros estão na cozinha. Utensílios? Copos? Xícaras? Onde?</i>', // Fase 21
+    '<i>Você continua pensando... Hum... Armários... Copos... Canecas... Xícaras... Onde pode estar?</i>', // Fase 22
+    'Srta. Laura, o Radar está concertado, mas ele escuta tudo o que a gente fala... Vamos tentar pedir dica para a Alexa?<br><i>(Diga "Alexa, tesouro vinte e três.")</i>', // Fase 23
+    '<i>Diga "Alexa, tesouro vinte e quatro."<i>', // Fase 24
+    '<i>Diga "Alexa, tesouro vinte e cinco."<i>', // Fase 25
+    'Vamos continuar as nossas buscas com o nosso Radar duvidoso da Shopee... "Com pés que giram, mas nunca andam sozinhos, guarda brasas do passado e aromas antigos. Mesmo em silêncio, ainda exala calor... O tesouro repousa onde já houve sabor."', // Fase 26
+    'Parece que o radar quebrou... Ele diz que o próximo tesouro está próxima a uma churrasqueira, mas já não estamos aqui? Nós já pegamos esse tesouro...', // Fase 27
     '', // Fase 28
-    '', // Fase 29
-    '🎉❤️', // Fase 30
+    '<i>(Traduza o código binário)</i>', // Fase 29
+    'Sabe o que eu parei pra pensar? O Sr. Victor me deu diversas instruções, mas nenhuma dessas instruções disseram que era proibido procurar dentro dos gigantes cruzadores de mundo... O que acha de procurarmos lá dentro mesmo sem o radar? A minha intuição está forte para isso!', // Fase 30
   ];
 
   codigosFases: string[] = [
@@ -127,29 +125,29 @@ export class JogoComponent implements AfterViewInit {
     { texto: '❔❔<br>Uma surpresa?! Fiquei sabendo que o Sr. Victor consegue trocar esses vales por outras coisas... O que será que ele te dará em troca desse vale misterioso?', imagem: '' }, // Fase 5 → Fase 6
     { texto: '🥶<br>Aiiii, que fr-friiiiiiioooo... Ouvi dizer que uma princesa das terras vizinhas sempre lava o seu lindo rosto com este sabonete. E sempre, quando vai enxaguar, faz um barulho engraçado. Dizem que o barulho é mais ou menos assim "Ahh Bruuuxxxxx".', imagem: '' }, // Fase 6 → Fase 7
     { texto: '🐄<br>O Berrante poderia ser um instrumento que encontra tesouros ao em vez de chamar rebanhos, né?! Aparentemente haverão novos tesouros em lugares que já passamos anteriormente... Às vezes só não vimos...', imagem: '' }, // Fase 7 → Fase 8
-    { texto: '', imagem: '' }, // Fase 8 → Fase 9
-    { texto: '❕❕<br>SRTA LAURA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Essa procura está melhor do que o programa "Febre do Ouro" da Discovery Channel 😄', imagem: '' }, // Fase 9 → Fase 10
-    { texto: '', imagem: '' }, // Fase 10 → Fase 11
-    { texto: '', imagem: '' }, // Fase 11 → Fase 12
-    { texto: '', imagem: '' }, // Fase 12 → Fase 13
-    { texto: '', imagem: '' }, // Fase 13 → Fase 14
-    { texto: '', imagem: '' }, // Fase 14 → Fase 15
-    { texto: '', imagem: '' }, // Fase 15 → Fase 16
-    { texto: '', imagem: '' }, // Fase 16 → Fase 17
-    { texto: '', imagem: '' }, // Fase 17 → Fase 18
-    { texto: '', imagem: '' }, // Fase 18 → Fase 19
-    { texto: '', imagem: '' }, // Fase 19 → Fase 20
+    { texto: '🏠<br>Esse lugar é muito grande... Será que conseguiremos encontrar todos os tesouros? O Sr. Victor me comunicou que não haveriam tesouros escondidos dentro dos demais quartos, então acho que não precisamos nos preocupar em procurar dentro deles...', imagem: '' }, // Fase 8 → Fase 9
+    { texto: '❕❕<br>SRTA LAURA, QUE SORTE A NOSSA, APARECERAM MAIS 10 NOVOS TESOUROS NO NOSSO RADAR. Isso está melhor do que as Aventuras de Tintim.', imagem: '' }, // Fase 9 → Fase 10
+    { texto: '🧐<br>SRTA. LAURA!!<br>Mesmo em momentos de descanso você não para. Por isso você é a melhor no que faz! Esqueça o que eu falei sobre descansar, a sua vontade imparável por procurar tesouros até mesmo em momentos de descanso me mostrou que eu tenho muito o que aprender. Vamos continuar na nossa busca!', imagem: '' }, // Fase 10 → Fase 11
+    { texto: '🧱<br>Nenhum muro é páreo para nós, nada vai nos parar! Avante com muita dedicação e determinação!', imagem: '' }, // Fase 11 → Fase 12
+    { texto: '🚗<br>Ouvi dizer que você é uma excelente motorista, Srta. Laura. O Sr. Victor me disse que já viu você estacionando dando drift.', imagem: '' }, // Fase 12 → Fase 13
+    { texto: '🗻<br>Uau! Que vista... Dá pra ver toda a sala daqui de cima... Vários sofás, cadeiras e... O que é aquilo? Um Xadrez nordestino? SRTA. LAURA, ACHO QUE ESTOU VENDO ALGUMA COISA!', imagem: '' }, // Fase 13 → Fase 14
+    { texto: '♟♟<br>Eu sabia, EU SABIA! Andar ao seu lado está melhorando à beça a minha capacidade de busca. Andar ao seu lado é aprender constantemente.<br>Eu sabia, EU SABIA! Andar ao seu lado está melhorando à beça a minha capacidade de busca. Andar ao seu lado é aprender constantemente.', imagem: '' }, // Fase 14 → Fase 15
+    { texto: '🏊<br>Srta. Laura, que lugar escuro e tenebroso. Eu sei que... Somos aventureiros... E... Enfrentamos qualquer coisa... Mas... Podemos ir embora daqui?', imagem: '' }, // Fase 15 → Fase 16
+    { texto: '🍬<br>Bom Bom Bom Bom parece tão Bom Bom.', imagem: '' }, // Fase 16 → Fase 17
+    { texto: '🍴<br>Esse lugar está me deixando com fome. Não comemos nada desde que começamos... Saco vazio não para em pé.', imagem: '' }, // Fase 17 → Fase 18
+    { texto: '🍋<br>Acabamos de falar sobre comida e o Radar nos trouxe para limoeiros. Estou começando a achar que ele escuta tudo o que a gente fala... QUERO MAIS TESOUROS, MAIS, MAIS!!', imagem: '' }, // Fase 18 → Fase 19
+    { texto: '🐶<br><i>(Uma das feras derruba o Radar, ele cai no chão e quebra)</i><br>O MEU RADAR!! Ainda bem que estamos quase terminando as nossas buscas... Agora precisarei consertá-lo...', imagem: '' }, // Fase 19 → Fase 20
     { texto: '🔧<br>O que?? Um tesouro escondido?! Só um segundo, deixe eu arrumar o Radar...<br><i>(Arrumando o Radar)</i><br>Pronto... Mas... PERA... SENHORITA LAURA!!', imagem: '' }, // Fase 20 → Fase 21
-    { texto: '', imagem: '' }, // Fase 21 → Fase 22
-    { texto: '', imagem: '' }, // Fase 22 → Fase 23
-    { texto: '', imagem: '' }, // Fase 23 → Fase 24
-    { texto: '', imagem: '' }, // Fase 24 → Fase 25
-    { texto: '', imagem: '' }, // Fase 25 → Fase 26
-    { texto: '', imagem: '' }, // Fase 26 → Fase 27
-    { texto: '', imagem: '' }, // Fase 27 → Fase 28
+    { texto: '💭<br><i>Você pensa... Onde será que está o outro tesouro?</i>', imagem: '' }, // Fase 21 → Fase 22
+    { texto: '😵<br><i>(Victinho volta ao normal)</i><br>Srta. Laura... Eu fiquei muito tempo apagado? O QUE?! DOIS TESOUROS?!', imagem: '' }, // Fase 22 → Fase 23
+    { texto: '📟<br>A TECNOLOGIA REALMENTE ESTÁ CRIANDO VIDA PRÓPRIA. É A REVOLUÇÃO DAS MÁQUINAS. Vamos tentar isso de novo?', imagem: '' }, // Fase 23 → Fase 24
+    { texto: '📟<br>Isso é incrível, será que podemos continuar procurando os tesouros desse jeito?!', imagem: '' }, // Fase 24 → Fase 25
+    { texto: '😅<br>A Alexa é realmente de mais. Será que ela ficou brava?', imagem: '' }, // Fase 25 → Fase 26
+    { texto: '🔥<br>Prefiro muito mais o calor de uma churrasqueira do que o frio da geladeira. Gosto de ficar quentinho. Será que sirvo mesmo para ser um explorador?', imagem: '' }, // Fase 26 → Fase 27
+    { texto: '🔥 x 2<br>Srta. Laura, você me surpreende a cada procura. Quem iria imaginar que existiria outra churrasqueira além daquela? Tenho muita sorte em ter você pra me ajudar a pensar durante as nossas buscas.', imagem: '' }, // Fase 27 → Fase 28
     { texto: '', imagem: '' }, // Fase 28 → Fase 29
-    { texto: '', imagem: '' }, // Fase 29 → Fase 30
-    { texto: '💖<br>', imagem: '' }, // Fase 30 → Fim
+    { texto: '🔑<br><i>Você percebe que tem um papel e uma caneta junto com o tesouro e pensa... O que são todos esses números? Será uma dica?</i>', imagem: '' }, // Fase 29 → Fase 30
+    { texto: '📃<br><i>(Uma Carta do Sr. Victor)</i><br>Laura, espero que tenha se divertido durante essa caça ao tesouro. Eu gostaria que soubesse que eu sempre me encho de felicidade e me sinto muito disposto a fazer as coisas quando o assunto é preparar algo especial para uma pessoa que eu amo. Eu não sei como esse jogo vai terminar, mas eu espero que me desculpe por fazer um presente tão longo. Mas garanto que o meu amor por você é ainda maior do que isso ou do que qualquer outra coisa que eu possa criar. Também espero que eu tenha acertado a maioria dos presente. Eu te amo muito, meu amor. Então, aproveito a oportunidade o clima deste último presente para te dizer: "Its always been you, Lau." - T4E21. 💖', imagem: '' }, // Fase 30 → Fim
   ];
 
   currentParabensImg = '';
