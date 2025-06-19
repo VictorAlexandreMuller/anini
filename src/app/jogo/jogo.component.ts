@@ -69,7 +69,7 @@ export class JogoComponent implements AfterViewInit {
     'Esse radar está todo doido, ele sempre está nos mandando para lugares distantes de onde estamos... "Eles guardam a entrada como fiéis sentinelas, com galhos erguidos e folhas sempre belas. Vestem-se de verde com toques de sol, e oferecem o tesouro em forma de anzol. Árvores modestas, mas cheias de intenção, pois escondem segredos em cada limão."', // Fase 18
     'Srta. Laura, cuidado, este tesouro parece ser perigoso e difício. Banheiro das feras! "Enfrente as feras do nível inferior e reivindique o seu tesouro escondido no banheiro! (Se necessário, solicite ajuda, você é aventureira e não uma domadora)"', // Fase 19
     'Srta. Laura, estamos quase terminando as nossas buscas, mas preciso arrumar o Radar para continuarmos... Preciso de uma chave de fenda... Acho que tem uma caixa de ferramentas no quarto do Sr. Victor... Poderia pegar pra mim, por favor?', // Fase 20
-    '<i>Victinho está paralizado. Você toma o radar da mão dele e percebe que os DOIS próximos tesouros estão na cozinha. Utensílios? Copos? Xícaras? Onde?</i>', // Fase 21
+    '<i>Victinho está paralizado. Você toma o radar da mão dele e percebe que os DOIS próximos tesouros estão na cozinha. Utensílios? Onde?</i>', // Fase 21
     '<i>Você continua pensando... Hum... Armários... Copos... Canecas... Xícaras... Onde pode estar?</i>', // Fase 22
     'Srta. Laura, o Radar está concertado, mas ele escuta tudo o que a gente fala... Vamos tentar pedir dica para a Alexa?<br><i>(Diga "Alexa, tesouro vinte e três.")</i>', // Fase 23
     '<i>Diga "Alexa, tesouro vinte e quatro."<i>', // Fase 24
@@ -131,7 +131,7 @@ export class JogoComponent implements AfterViewInit {
     { texto: '🧱<br>Nenhum muro é páreo para nós, nada vai nos parar! Avante com muita dedicação e determinação!', imagem: 'vitinhoSagaz.png' }, // Fase 11 → Fase 12
     { texto: '🚗<br>Ouvi dizer que você é uma excelente motorista, Srta. Laura. O Sr. Victor me disse que já viu você estacionando dando drift.', imagem: 'vitinhoSagaz.png' }, // Fase 12 → Fase 13
     { texto: '🗻<br>Uau! Que vista... Dá pra ver toda a sala daqui de cima... Vários sofás, cadeiras e... O que é aquilo? Um Xadrez nordestino? SRTA. LAURA, ACHO QUE ESTOU VENDO ALGUMA COISA!', imagem: 'vitinhoExplicando.png' }, // Fase 13 → Fase 14
-    { texto: '♟♟<br>Eu sabia, EU SABIA! Andar ao seu lado está melhorando à beça a minha capacidade de busca. Andar ao seu lado é aprender constantemente.<br>Eu sabia, EU SABIA! Andar ao seu lado está melhorando à beça a minha capacidade de busca. Andar ao seu lado é aprender constantemente.', imagem: 'vitinhoSagaz.png' }, // Fase 14 → Fase 15
+    { texto: '♟♟<br>Eu sabia, EU SABIA! Andar ao seu lado está melhorando à beça a minha capacidade de busca. Andar ao seu lado é aprender constantemente.', imagem: 'vitinhoSagaz.png' }, // Fase 14 → Fase 15
     { texto: '🏊<br>Srta. Laura, que lugar escuro e tenebroso. Eu sei que... Somos aventureiros... E... Enfrentamos qualquer coisa... Mas... Podemos ir embora daqui?', imagem: 'vitinhoTimido.png' }, // Fase 15 → Fase 16
     { texto: '🍬<br>Bom Bom Bom Bom parece tão Bom Bom.', imagem: 'vitinhoSagaz.png' }, // Fase 16 → Fase 17
     { texto: '🍴<br>Esse lugar está me deixando com fome. Não comemos nada desde que começamos... Saco vazio não para em pé.', imagem: 'vitinhoTimido.png' }, // Fase 17 → Fase 18
